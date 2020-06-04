@@ -1,3 +1,5 @@
+const models = require('../models');
+
 var express = require('express');
 var router = express.Router();
 
@@ -93,6 +95,30 @@ router.get('/more/terms/location', function(req, res, next) {
 
 router.get('/more/terms/privacy', function(req, res, next) {
   res.render('privacy', { title: '개인정보 처리방침 - 모두의 호텔리어' });
+});
+
+router.get('/board', function(req, res, next) {
+  models.post.findAll().then( result => {
+    res.render("show", {
+      posts: result
+    });
+  });
+});
+
+router.post('/board', function(req, res, next) {
+  let body = req.body;
+
+  models.post.create({
+    title: body.inputTitle,
+    writer: body.inputWriter
+  })
+  .then( result => {
+    console.log("데이터 추가 완료");
+    res.redirect("/board");
+  })
+  .catch( err => {
+    console.log("데이터 추가 실패");
+  })
 });
 
 module.exports = router;
