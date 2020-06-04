@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include ./viewmodules/head.ejs %>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/common.css">
+</head>
+
+<body>
+
+    <!-- Wrap -->
+    <div class="wrap">
+
+        <!-- 로그인 pop_layer_w('pop_login') -->
+        <div class="layer_fix layer_unfix pop_login pop_mem_reserve">
+            <section>
+                <form id="loginForm" action="http://localhost:3000/user/loginProcess" autocomplete="off"
+                    method="post">
+                    <!-- <input type="hidden" name="yeogi_token" value="87c0467b2089abc5b4e085c5ff4a9d87"> -->
+                    <div class="fix_title">
+                        <strong class="logo"><a href="http://localhost:3000/">우리의 호텔리어</a></strong>
+                    </div>
+                    <button type="button" id="kakao-login-btn" class="btn_start btn_kakao" data-device-type="W"><span><i
+                                class="icon-ic_login_kakaotalk"></i>카카오톡으로 로그인</span></button>
+                    <button type="button" id="facebook-login-btn" class="btn_start btn_fb"><span><i
+                                class="icon-icn_login_facebook"></i>Facebook으로 로그인</span></button>
+                    <a href=""
+                        id="naver_id_login" class='btn_start btn_naver'><span><i class="icon-ic_login_naver"></i>네이버로
+                            로그인</span></a>
+                    <p class="space_or"><span>또는</span></p>
+                    <div class="inp_type_1 ico_email form-errors">
+                        <!-- focus / err -->
+                        <input type="email" name="uid" placeholder="이메일 주소" required class="required" value=""
+                            data-msg-required="이메일 주소를 입력해 주세요." />
+                    </div>
+                    <div class="inp_type_1 ico_pw form-errors">
+                        <input type="password" name="upw" placeholder="비밀번호" required class="required"
+                            data-msg-required="비밀번호를 입력해 주세요." />
+                    </div>
+                    <button class="btn_link gra_left_right_red" type="submit"><span>로그인</span></button>
+                    <div class="link_half">
+                        <div><a href="http://localhost:3000/user/passwdResetStart"><span>비밀번호 재설정</span></a></div>
+                        <div><a href="http://localhost:3000/user/join"><span>회원가입</span></a></div>
+                    </div>
+
+                    
+                </form>
+            </section>
+
+        </div>
+
+        <footer>
+            <% include ./viewmodules/footer.ejs %>
+          </footer>
+    </div>
+</body>
+
+</html>
