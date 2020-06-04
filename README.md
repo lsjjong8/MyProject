@@ -10,5 +10,5 @@ on mac
 on window
 ``` set DEBUG=myapp:* & npm start ```
 
-on everywhre
+on everywhere
 ``` npm start ```

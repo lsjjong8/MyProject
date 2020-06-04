@@ -1,5 +1,5 @@
 /* Main */
-.main_spot{height:184px;background:#2AC1BC url('images/image.png') 50% 100% no-repeat;background-size:auto 170px;text-indent:-9999px;}
+.main_spot{height:184px;background:#0A141E url('images/image.png') 50% 100% no-repeat;background-size:auto 170px;text-indent:-9999px;}
 .recommend{padding:23px 16px 0 16px}
 .recommend li{position:relative;border-bottom:1px solid rgba(0,0,0,0.08);padding-left:108px;}
 .recommend li a{display:block;height:112px;font-size:13px;line-height:22px;color:rgba(0,0,0,0.56)}
@@ -51,7 +51,7 @@
 
 /* Media Query 768 */
 @media all and (min-width:768px){
-	.main_spot{height:220px;background:#2AC1BC url('images/image.png') 50% 100% no-repeat;background-size:auto 207px;}
+	.main_spot{height:220px;background:#0A141E url('images/image.png') 50% 100% no-repeat;background-size:auto 207px;}
 	.ad_ask{overflow:hidden;margin-bottom:40px;}
 	.ad_ask ul li{height:auto;border:1px solid rgba(0,0,0,0.04);}
 	.ad_ask ul li:first-child{display:inline-block;float:left;width:49%;}
@@ -62,7 +62,7 @@
 
 /* Media Query 1024 */
 @media all and (min-width:1024px){
-	.main_spot{height:454px;background:#2AC1BC url('images/image.png') 50% 100% no-repeat;background-size:760px 382px;}
+	.main_spot{height:454px;background:#0A141E url('images/image.png') 50% 100% no-repeat;background-size:760px 382px;}
 	.main_link{padding:32px 0 29px 41px;background:rgb(253,253,253)}
 	.main_link ul{overflow:hidden;width:1024px;margin:0 auto}
 	.main_link li{float:left;width:109px}

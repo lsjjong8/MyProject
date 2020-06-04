@@ -7,99 +7,75 @@
 </head>
 
 <body>
-
-    <!-- Wrap -->
-    <div class="wrap">
-        <div className="SignupForm">
-            <h1>회원 가입</h1>
-            <form id="joinForm" action="http://localhost:3000/user/joinProcess" autocomplete="off" method="post"
-                novalidate="novalidate"> -->
-                <!-- <input type="hidden" name="yeogi_token" value="419c09d144f8625d0ef3a976c3a1c416"> -->
-
-                <input type="hidden" name="privacy_auxiliary_policy">
-                <input type="hidden" name="location_policy">
-
+    <div class="layer_fix layer_unfix pop_login pop_mem_reserve">
+        <section>
+            <form id="loginForm" action="http://localhost:3000/user/loginProcess" autocomplete="off" method="post">
+                <!-- <input type="hidden" name="yeogi_token" value="87c0467b2089abc5b4e085c5ff4a9d87"> -->
                 <div class="fix_title">
-                    <h1 class="page_head"><a href="http://localhost:3000/" title="여기어때">여기어때</a></h1>
+                    <strong class="logo"><a href="http://localhost:3000/">우리의 호텔리어</a></strong>
+                </div>
+                <button type="button" id="kakao-login-btn" class="btn_start btn_kakao" data-device-type="W"><span><i
+                            class="icon-ic_login_kakaotalk"></i>카카오톡으로 로그인</span></button>
+                <button type="button" id="facebook-login-btn" class="btn_start btn_fb"><span><i
+                            class="icon-icn_login_facebook"></i>Facebook으로 로그인</span></button>
+                <a href="" id="naver_id_login" class='btn_start btn_naver'><span><i class="icon-ic_login_naver"></i>네이버로
+                        로그인</span></a>
+                <p class="space_or"><span>또는</span></p>
+                <div class="inp_type_1 ico_email form-errors">
+                    <!-- focus / err -->
+                    <input type="email" name="uid" placeholder="이메일 주소" required class="required" value=""
+                        data-msg-required="이메일 주소를 입력해 주세요." />
+                </div>
+                <div class="inp_type_1 ico_pw form-errors">
+                    <input type="password" name="upw" placeholder="비밀번호" required class="required"
+                        data-msg-required="비밀번호를 입력해 주세요." />
+                </div>
+                <button class="btn_link gra_left_right_red" type="submit"><span>로그인</span></button>
+                <div class="link_half">
+                    <div><a href="http://localhost:3000/user/passwdResetStart"><span>비밀번호 재설정</span></a></div>
+                    <div><a href="http://localhost:3000/user/join"><span>회원가입</span></a></div>
                 </div>
 
-                <div class="join">
-                    <strong class="sub_title">회원가입</strong>
-                    <b>이메일 아이디</b>
-                    <div class="inp_type_2 form-errors">
-                        <!-- focus / err -->
-                        <input type="email" name="uid" id="gcuseremail" placeholder="이메일 주소를 입력해주세요." class="valid"
-                            aria-invalid="false">
-                        <label id="gcuseremail_msg" class="validate_msg_label" style="color: red;"></label>
-                    </div>
-
-                    <b>닉네임</b>
-                    <div class="inp_type_2 form-errors btn-add">
-                        <input type="text" id="unick" name="unick" required="" class="required"
-                            data-msg-required="닉네임을 입력하세요." data-rule-minlength="2" data-rule-spacechar="true"
-                            data-rule-specialchar="true"><label id="unick-error"
-                            class="error help-block default_label_txt icon-ic_downwards_arrow" for="unick">추천
-                            닉네임이에요!</label>
-                        <button type="button" class="btn_etc" onclick="changeNickname();">중복 확인</button>
-                    </div>
-
-                    <b>비밀번호</b>
-                    <div class="inp_type_2 form-errors form-password-rule">
-                        <input type="password" name="upw" placeholder="비밀번호를 입력해주세요." id="new_pw"
-                            aria-autocomplete="list" class="valid" aria-invalid="false">
-                        <label id="new_pw_msg" class="validate_msg_label" style="color: blue;"></label>
-                    </div>
-
-                    <b>비밀번호 확인</b>
-                    <div class="inp_type_2 form-errors">
-                        <input type="password" name="upw_retry" placeholder="비밀번호를 입력해주세요." id="new_pw_re" class="valid"
-                            aria-invalid="false">
-                        <label id="new_pw_re_msg" class="validate_msg_label"></label>
-                    </div>
-
-                    <button type="button" id="joinBtn" class="btn_link gra_left_right_red btn_user_submit"
-                        style="background-color: #2AC1BC; color: rgb(255, 255, 255); border: none;"><span>가입하기</span></button>
-                </div>
-
-                <!-- div className="form-group">
-                    <div className="col-1 col-ml-auto">
-                        <label className="form-label" htmlFor="username">Username</label>
-                    </div>
-                    <div className="col-3 col-mr-auto">
-                        <input className="form-input" type="text" id="username" name="username" placeholder="Username"
-                            onChange={this.handleChange} />
-                    </div>
-                </div>
-                <div className="form-group">
-                    <div className="col-1 col-ml-auto">
-                        <label className="form-label" htmlFor="password">Password: </label>
-                    </div>
-                    <div className="col-3 col-mr-auto">
-                        <input className="form-input" placeholder="password" type="password" name="password"
-                            onChange={this.handleChange} />
-                    </div>
-                </div>
-                <div className="form-group">
-                    <div className="col-1 col-ml-auto">
-                        <label className="form-label" htmlFor="confirmPassword">Confirm Password: </label>
-                    </div>
-                    <div className="col-3 col-mr-auto">
-                        <input className="form-input" placeholder="confirm password" type="password"
-                            onChange={this.handleChange} />
-                    </div>
-                </div>
-                <div className="form-group ">
-                    <div className="col-7"></div>
-                    <button className="btn btn-primary col-1 col-mr-auto" onClick={this.handleSubmit} type="submit">Sign
-                        up</button>
-                </div> -->
+                <!-- Wrap -->
+                <!-- <div class="wrap">
+        <div className="form-group">
+        <div className="col-1 col-ml-auto">
+            <label className="form-label" htmlFor="username">Username</label>
+        </div>
+        <div className="col-3 col-mr-auto">
+            <input className="form-input" type="text" id="username" name="username" placeholder="Username"
+                onChange={this.handleChange} />
+        </div>
+    </div>
+    <div className="form-group">
+        <div className="col-1 col-ml-auto">
+            <label className="form-label" htmlFor="password">Password: </label>
+        </div>
+        <div className="col-3 col-mr-auto">
+            <input className="form-input" placeholder="password" type="password" name="password"
+                onChange={this.handleChange} />
+        </div>
+    </div>
+    <div className="form-group">
+        <div className="col-1 col-ml-auto">
+            <label className="form-label" htmlFor="confirmPassword">Confirm Password: </label>
+        </div>
+        <div className="col-3 col-mr-auto">
+            <input className="form-input" placeholder="confirm password" type="password" onChange={this.handleChange} />
+        </div>
+    </div>
+    <div className="form-group ">
+        <div className="col-7"></div>
+        <button className="btn btn-primary col-1 col-mr-auto" onClick={this.handleSubmit} type="submit">Sign
+            up</button>
+    </div> -->
 
             </form>
 
             <footer>
                 <% include ./viewmodules/footer.ejs %>
             </footer>
-        </div>
+    </div>
 </body>
 
 </html>
