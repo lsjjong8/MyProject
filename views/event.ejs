@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <% include ./viewmodules/head.ejs %>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/common.css">
+</head>
+
+<body>
+
+    <!-- Wrap -->
+    <div class="wrap">
+
+        <!-- Header -->
+        <header>
+            <% include ./viewmodules/header.ejs %>
+            <link rel="stylesheet" type="text/css" href="/stylesheets/common.css">
+            <link rel="stylesheet" type="text/css" href="/stylesheets/more.css">
+        </header>
+
+        <!-- Bg Dimm -->
+        <div class="bg_dimm" onclick="close_layer();">&nbsp;</div>
+        <div class="bg_dimm_prevent">&nbsp;</div>
+
+        <!-- 추천검색어 -->
+        <div class="recommend_srch">
+            <div class="scroll_srch">
+                <div class="scroller">
+                    <div class="default" style="display:block">
+                        <strong>추천 검색어</strong>
+                        <ul></ul>
+                    </div>
+                    <!-- 연관검색어 -->
+                    <div class="chain">
+                        <ul></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="gnb_opacity"><button class="btn_close">닫기</button></div>
+        <div class="menu_wrap">
+
+            <div class="menu">
+                <div class="top">
+                    <!-- 비회원 -->
+                    <div class="guest">
+                        <div class="btn_join">
+                            로그인 후 예약하시면<br>할인 쿠폰과 추가 혜택을 받을 수 있어요.<br />
+                            <a href="http://localhost:3000/user/login"><span>로그인</span></a>
+                        </div>
+                        <div class="bot">
+                            <!-- 스크립트 링크 -->
+                            <a href="http://localhost:3000/user/login">
+                                <p>-<br /><span>포인트</span></p>
+                            </a>
+                            <a href="http://localhost:3000/user/login">
+                                <p>-<br /><span>쿠폰함</span></p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Iscroll -->
+                <div class="scroll_nav">
+                    <div class="scroller">
+                        <ul>
+                            <li><a href="http://localhost:3000/">홈</a></li>
+                            <li class="depth_2">
+                                <button type="button" class="has_ul"><span>숙소유형</span></button>
+                                <ul>
+                                    <li><a href="http://localhost:3000/product/home/1">모텔</a></li>
+                                    <li><a href="http://localhost:3000/product/search/2">호텔/리조트</a></li>
+                                    <li><a href="http://localhost:3000/product/search/3">펜션</a></li>
+                                    <li><a href="http://localhost:3000/product/search/6">게스트하우스</a></li>
+                                    <li><a href="http://localhost:3000/product/search/5">캠핑·글램핑</a></li>
+                                    <li><a href="http://localhost:3000/product/search/7">한옥 </a></li>
+                                </ul>
+                            </li>
+                            <li><a href="http://localhost:3000/product/srp">내주변</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="http://localhost:3000/user/login?returnUrl=my%2FreserveList">예약 내역</a></li>
+                        </ul>
+                        <ul>
+                            <li class="depth_2"><button type="button" class="has_ul"><span>더보기</span></button>
+                                <ul>
+                                    <li><a href="http://localhost:3000/more/notice">공지사항</a></li>
+                                    <li><a href="http://localhost:3000/more/event">이벤트</a></li>
+                                    <li><a href="http://localhost:3000/more/project">혁신 프로젝트</a></li>
+                                    <li><a href="http://localhost:3000/more/faq">고객문의</a></li>
+                                    <li><a href="http://localhost:3000/more/terms">약관 및 정책</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="center">
+                            <p>여기어때 고객행복센터</p>
+                            <p><a href="tel:1670-6250">1670-6250</a></p>
+                            <p>오전 9시 - 새벽 3시<br />(점심시간 : 오후 12시 - 오후 1시)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //Mobile Menu -->
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="/css/more.css?rand=1591250196" />
+
+        <!-- Sub Top -->
+        <div class="sub_top_wrap">
+            <div class="sub_top bg_kong_3">
+                <h2>더보기</h2>
+            </div>
+        </div>
+        <!-- //Sub Top -->
+
+        <!-- Content  -->
+        <div id="content" class="sub_wrap more_wrap">
+
+            <!-- Nav -->
+            <nav>
+                <ul>
+                    <li><a href="/more/notice">공지사항</a></li>
+                    <li><a href="/more/event" class="active">이벤트</a></li>
+                    <li><a href="/more/project">혁신 프로젝트</a></li>
+                    <li><a href="/more/faq">자주 묻는 질문</a></li>
+                    <li><a href="/more/inquiry">1:1 문의</a></li>
+                    <li><a href="/more/terms">약관 및 정책</a></li>
+                </ul>
+            </nav>
+            <div class="align_rt">
+
+                <!-- Event -->
+                <div class="event">
+
+                    <div class="mobile_top">이벤트</div>
+
+                    <ul id="event" class="event_list">
+                        <template v-for="row in result">
+                            <li v-bind:class="row.event_state != '1' ? 'end' : ''">
+                                <button v-if="row.win_confirm == 'Y'"
+                                    v-on:click="pop_win(row.win_confrim_list_url);">당첨자 확인</button>
+                                <b>{{row.event_title}}</b>
+                                <span>기간: {{row.event_date}}</span>
+                                <a :href="'/more/eventView/'+ row.event_no +'?page='+ page"
+                                    v-if="row.event_state == '1'">
+                                    <img :src="'//image.goodchoice.kr' + row.banner_src" alt="" />
+                                </a>
+                                <img :src="'//image.goodchoice.kr' + row.banner_src" alt="" v-else />
+                            </li>
+                        </template>
+                    </ul>
+
+                    <div id="pagination">
+                        <my-pagination></my-pagination>
+                    </div>
+
+                </div>
+                <!-- //Event -->
+
+            </div>
+
+        </div>
+        <!-- //Content  -->
+
+        <!-- 당첨자 확인 팝업 -->
+        <div class="layer pop_fix pop_win">
+            <div class="fix_title">
+                당첨자 확인
+                <button onclick="close_layer();">닫기</button>
+            </div>
+            <div class="fix_cont iscroll_win">
+                <div class="scroller">
+                    <div class="winner" id="winner_list">
+                        <template v-for="row in result">
+                            <div class="info">
+                                <p>{{row.nttitle}}</p>
+                                <span>{{row.ntreg}}</span>
+                            </div>
+                            <div class="txt" v-html="row.ntcont"></div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <% include ./viewmodules/footer.ejs %>
+        </footer>
+
+    </div>
+
+    <!-- 상단으로 -->
+    <button class="btn_go_top" onclick="moveTop();">상단으로</button>
+
+    <!-- //Wrap -->
+
+    <!-- Script -->
+    <!-- Library -->
+    <script type="text/javascript" src="/js/library/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/js/library/jquery.lazyload.js?rand=1591250196"></script>
+    <script type="text/javascript" src="/js/library/iscroll.js"></script>
+
+    <!-- Service -->
+    <script type="text/javascript" src="/js/service/common.js?rand=1591250196"></script>
+    <script type="text/javascript" src="/js/service/geolocation.js?rand=1591250196"></script>
+
+    <!-- Module -->
+    <script type="text/javascript" src="/js/modules/dialogPopup.js?rand=1591250196"></script>
+
+    <!-- Page Script -->
+    <script type="text/javascript" src="/js/library/vue.min.js"></script>
+    <script type="text/javascript" src="http://localhost:3000/js/service/more.js?rand=1591250196"></script>
+
+    <!-- Body Spinner -->
+    <div class="spinner show"><span></span></div>
+
+    <div style="display:none;">
+        <!-- 네이버 프리미엄 로그 분석(https://yeogirnd.atlassian.net/browse/SD-320)-->
+        <script type="text/javascript" src="https://wcs.naver.net/wcslog.js"></script>
+
+        <script>
+            //스토어 랜딩 분기
+            function goAppStore(dialogCheck) {
+
+                var url = location.protocol + '//m.goodchoice.kr/main/adKeywordLanding/';
+                var kcode = getCookie('k_code');
+
+                if (kcode && kcode.indexOf("^") > -1) {
+                    if (kcode.indexOf("du_") === 0) {
+                        // 'du_' 다음 유입
+                        dialogCheck ? url += 'oK0nFLMJQJ2l' : url += 'oK0nFLMJQJ2j';
+                    } else if (kcode.indexOf("ns_") === 0) {
+                        // 'ns_' 네이버 지식쇼핑 유입
+                        dialogCheck ? url += 'ogMnDvZlsM2j' : url += 'ogynogydDJ2j';
+                    } else {
+                        // 그 외
+                        url += 'ogMnDvZlsM2j';
+                    }
+                } else {
+                    // 그 외
+                    dialogCheck ? url += 'ogMnDvZlsM2b' : url += 'ogMnDvZlsM2j';
+                }
+                location.href = url;
+            }
+            // 쿠키 생성
+            function setCookie(cName, cValue, cDay) {
+                var expire = new Date();
+                expire.setDate(expire.getDate() + cDay);
+                cookies = cName + '=' + escape(cValue) + '; path=/ ';
+                if (typeof cDay != 'undefined') cookies += ';expires=' + expire.toGMTString() + ';';
+                document.cookie = cookies;
+            }
+
+            // 쿠키 가져오기
+            function getCookie(cName) {
+                cName = cName + '=';
+                var cookieData = document.cookie;
+                var start = cookieData.indexOf(cName);
+                var cValue = '';
+                if (start != -1) {
+                    start += cName.length;
+                    var end = cookieData.indexOf(';', start);
+                    if (end == -1) end = cookieData.length;
+                    cValue = cookieData.substring(start, end);
+                }
+                return unescape(cValue);
+            }
+            if (getCookie('marketing_type') != '') {
+                if (getCookie('marketing_type') == 'pay') {
+                    var _nasa = {};
+                    _nasa["cnv"] = wcs.cnv("1", getCookie('marketing_price')); // 전환유형, 전환가치 설정해야함. 설치매뉴얼 참고
+                } else {
+                    var _nasa = {};
+                    _nasa["cnv"] = wcs.cnv("2", "1"); // 전환유형, 전환가치 설정해야함. 설치매뉴얼 참고
+                }
+
+                //쿠키 삭제
+                setCookie('marketing_price', '', -1);
+                setCookie('marketing_type', '', -1);
+            }
+        </script>
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-77719807-2', 'auto');
+            ga('send', 'pageview');
+        </script>
+
+        <!-- Daum  중요 용도가 아니라면 주석처리 여부 결정 문제 없을시 삭제
+    <script type="text/javascript">
+        var roosevelt_params = {
+            retargeting_id:'iaYgM3OBV.Uv.QOMJv.bqg00',
+            tag_label:'BTecd8srQJ2G5hhOmZIanw'
+        };
+    </script>
+    <script type="text/javascript" src="//adimg.daumcdn.net/rt/roosevelt.js" async></script -->
+
+        <!-- Google Code for &#50668;&#44592;&#50612;&#46412;_&#50937; Conversion Page -->
+        <script type="text/javascript">
+            /* <![CDATA[ */
+            var google_conversion_id = 964418007;
+            var google_conversion_language = "en";
+            var google_conversion_format = "3";
+            var google_conversion_color = "ffffff";
+            var google_conversion_label = "6YMHCM_i81wQ17PvywM";
+            var google_remarketing_only = false;
+            /* ]]> */
+        </script>
+        <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+
+        <noscript>
+            <div style="display:inline;">
+                <img height="1" width="1" style="border-style:none;" alt=""
+                    src="//www.googleadservices.com/pagead/conversion/964418007/?label=6YMHCM_i81wQ17PvywM&amp;guid=ON&amp;script=0" />
+            </div>
+        </noscript>
+
+        <script type="text/javascript">
+            if (!wcs_add) var wcs_add = {};
+            wcs_add["wa"] = "s_4540c185467c";
+            if (!_nasa) var _nasa = {};
+            wcs.inflow("goodchoice.kr");
+            wcs_do(_nasa);
+        </script>
+
+        <!-- Global site tag (gtag.js) - Google AdWords: 802163829 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-802163829"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'AW-802163829');
+
+            // Event snippet for WEB_다운로드_버튼 conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button.
+
+            $(function () {
+                $('.appdown_link').on('click', function () {
+                    gtag('event', 'conversion', {
+                        'send_to': 'AW-802163829/jxc6CN22x4MBEPWYwP4C'
+                    });
+                });
+            });
+        </script>
+
+        <!-- 채널제출 -->
+        <span itemscope="" itemtype="http://schema.org/Organization">
+            <link itemprop="url" href="http://localhost:3000">
+            <a itemprop="sameAs" href="https://www.facebook.com/goodchoiceofficial"></a>
+            <a itemprop="sameAs" href="https://play.google.com/store/apps/details?id=kr.goodchoice.abouthere"></a>
+            <a itemprop="sameAs" href="https://itunes.apple.com/kr/app/id884043462"></a>
+            <a itemprop="sameAs" href="https://post.naver.com/withinnovation"></a>
+            <a itemprop="sameAs" href="https://www.youtube.com/channel/UCLI1HOVJdhWdVl9pT__g2Zw"></a>
+        </span>
+    </div>
+</body>
+
+</html>

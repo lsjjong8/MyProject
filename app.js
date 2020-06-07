@@ -9,6 +9,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 const models = require("./models/index.js");
+const methodOverride = require('method-override');
 
 var app = express();
 
@@ -19,6 +20,8 @@ models.sequelize.sync().then( () => {
   console.log("연결 실패");
   console.log(err);
 })
+
+app.use(methodOverride('_method'));
 
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 // app.use('/static', express.static(__dirname + '/public'));

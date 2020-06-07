@@ -4,7 +4,7 @@
 .mobile_top{position:relative;height:44px;font-size:18px;line-height:44px;text-align:center}
 .notice{background:#fff}
 .tab{height:48px}
-/* .tab a,.tab .tab_btn{display:inline-block;position:relative;float:left;position:relative;width:50%;height:48px;font-size:14px;line-height:48px;color:rgba(0,0,0,0.56);text-align:center;cursor:pointer} */
+.tab a,.tab .tab_btn{display:inline-block;position:relative;float:left;position:relative;width:50%;height:48px;font-size:14px;line-height:48px;color:rgba(0,0,0,0.56);text-align:center;cursor:pointer}
 .tab a,.tab .tab_btn{display:inline-block;position:relative;position:relative;width:50%;height:48px;font-size:14px;line-height:48px;color:rgba(0,0,0,0.56);text-align:center;cursor:pointer}
 .tab .active,.tab .tab_btn.active{color:#000;font-weight:bold;color:rgb(242,17,76)}
 .tab .active:after,.tab .tab_btn.active:active{display:block;content:'';position:absolute;bottom:0;left:0;width:100%;height:2px;background:rgb(242,17,76)}
@@ -158,7 +158,7 @@ li .ico_new{top:1px}
 .inquiry .tab_each:first-child{display:block}
 .inquiry .tab{display:none}
 .tab_each{clear:both;border-top:1px solid rgba(0,0,0,0.08)}
-/* .show_list a .reply_chk{display:inline;position:relative;top:1.5px;width:auto;height:auto;padding:1.5px 1px 0.5px 1px;border:1px solid rgba(0,0,0,0.56);border-radius:4px;font-size:10px;font-weight:normal;line-height:normal;color:rgba(0,0,0,0.56);vertical-align:top} */
+.show_list a .reply_chk{display:inline;position:relative;top:1.5px;width:auto;height:auto;padding:1.5px 1px 0.5px 1px;border:1px solid rgba(0,0,0,0.56);border-radius:4px;font-size:10px;font-weight:normal;line-height:normal;color:rgba(0,0,0,0.56);vertical-align:top}
 .show_list a .reply_chk{display:inline;position:relative;top:1.5px;padding:1.5px 1px 0.5px 1px;border:1px solid rgba(0,0,0,0.56);border-radius:4px;font-size:10px;font-weight:normal;line-height:normal;color:rgba(0,0,0,0.56);vertical-align:top}
 .show_list p .reply_chk,.show_list p .ico_new{display:none}
 .inquiry .alert_top{padding:8px;border-bottom:none}
@@ -276,7 +276,7 @@ li .ico_new{top:1px}
 	.agree_wrap{padding:0px 16px;}
 	.agree_wrap div span{font-size: 14px;}
 	.agree_wrap div btn{font-size: 14px;}
-} /* Media query Close */
+} /* Media query Close ___
 
 
 
@@ -285,7 +285,7 @@ li .ico_new{top:1px}
 .half_4 li:nth-child(even) a{border-right:none}
 .half_4 li:nth-child(odd) a{border-right:1px solid rgba(0,0,0,0.08) !important}
 .add_policy{margin:20px 0 30px 0;text-decoration:underline}
-.terms{display:none;padding:0 16px 0 16px;background:#fff;font-size:14px;line-height:22px;color:rgba(0,0,0,0.56);transition:0.4s;}
+/* .terms{display:none;padding:0 16px 0 16px;background:#fff;font-size:14px;line-height:22px;color:rgba(0,0,0,0.56);transition:0.4s;} */
 .terms h3{display:none;font-size:18px;margin-bottom:20px;color:rgba(0,0,0,0.87)}
 .terms .before_policy{display:none;}
 .terms.down{margin-top:0}
@@ -325,9 +325,9 @@ li .ico_new{top:1px}
 .terms .verify-block{overflow:hidden;position: relative; padding-left: 120px; padding-top: 40px; min-height: 100px;}
 .terms .verify-block b{position: absolute; top:0; left:0; }
 .terms .verify-block img{ position:absolute; top: 30%; left:0; width: 100px; height: 100px;}
-/* .terms .verify-block .description{} */
+.terms .verify-block .description{}
 .terms .verify-block .description div:first-child{margin-bottom:10px;}
-/* .terms .verify-block span{display;block; margin-bottom: 10px;} */
+.terms .verify-block span{display;block; margin-bottom: 10px;}
 .terms .verify-block div strong{ display:inline;padding:0;}
 .business_pop ul{ margin-bottom:0; height: 392px;}
 .business_pop .paging{ margin-top:0;}
@@ -339,14 +339,14 @@ li .ico_new{top:1px}
 .agree_tab button.on{border:1px solid #e62a4a;background:#e62a4a;color:#fff}
 .agree_tab button:first-child{float:left}
 
-@media all and (min-width:1024px){
+/* @media all and (min-width:1024px){
 	.half_4 li{width:auto !important}
 	.half_4 li:nth-child(odd) a{border-right:none !important}
 	.terms{display:none;padding:0;font-size:16px;line-height:26px}
 	.terms .txt{padding:28px 0 23px 0}
 	.terms .add_policy{font-size:16px}
 	.terms .button-policy{font-size: 16px;}
-}
+} */
 
 .terms_new .terms_title{overflow:hidden;}
 .terms_new .terms_title h2{height:58px;font-size:24px;font-weight:bold;line-height:60px;}
