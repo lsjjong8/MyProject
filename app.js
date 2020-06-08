@@ -4,6 +4,7 @@ var favicon = require('serve-favicon')
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const session = require('express-session');
 
 var indexRouter = require('./routes/index');
 var userRouter = require('./routes/user');
@@ -25,6 +26,15 @@ models.sequelize.sync().then( () => {
 })
 
 app.use(methodOverride('_method'));
+app.use(session({
+  key: 'sid',
+  secret: 'secret',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    maxAge: 250 * 60 * 60 // 쿠키 유효기간 15분
+  }
+}));
 
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 // app.use('/static', express.static(__dirname + '/public'));

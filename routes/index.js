@@ -4,8 +4,11 @@ const models = require('../models');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('index', {
-    title: '모두의 호텔리어'
+  let session = req.session;
+
+  res.render("index", {
+    title: '모두의 호텔리어',  
+    session : session
   });
 });
 
@@ -14,25 +17,6 @@ router.get('/b2b/intro', function (req, res, next) {
     title: '비즈니스 페이지 - 모두의 호텔리어'
   });
 });
-
-// 게시글 목록
-// router.get('/board', function(req, res, next) {
-//   models.post.findAll()
-//   .then( result => {
-//     models.post.findOne({
-//       include: {
-//         model: models.reply,
-//         where: {postId: 1}
-//       }
-//     })
-//     .then( result2 => {
-//       console.log(result2.replies)
-//     })
-//   })
-//   .catch(function(err){
-//     console.log(err);
-//   });
-// });
 
 // 게시글 목록
 router.get('/board', async function(req, res, next) {

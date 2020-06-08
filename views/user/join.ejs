@@ -1,29 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
+    <% include ../viewmodules/head.ejs %>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/common.css">
 </head>
+
 <body>
-<h3>회원 가입</h3>
-<form action="/user/sign_up" method="post">
-    <table>
-        <tr>
-            <td>이름 : </td>
-            <td><input type="text" name="userName"></td>
-        </tr>
-        <tr>
-            <td>이메일 : </td>
-            <td><input type="text" name="userEmail"></td>
-        </tr>
-        <tr>
-            <td>비번 : </td>
-            <td><input type="password" name="password"></td>
-        </tr>
-        <tr>
-            <td><input type="submit" value="회원가입"></td>
-        </tr>
-    </table>
-</form>
+    <!-- Wrap -->
+    <div class="wrap">
+        <div className="SignupForm">
+            <form id="joinForm" action="/user/join" autocomplete="off" method="post"
+                novalidate="novalidate">
+                <!-- <input type="hidden" name="yeogi_token" value="419c09d144f8625d0ef3a976c3a1c416"> -->
+
+                <input type="hidden" name="privacy_auxiliary_policy">
+                <input type="hidden" name="location_policy">
+
+                <div class="fix_title">
+                    <h1 class="page_head"><a href="http://localhost:3000/" title="모두의 호텔리어">모두의 호텔리어</a></h1>
+                </div>
+
+                <div class="join">
+                    <strong class="sub_title">회원가입</strong>
+                    <b>이메일 아이디</b>
+                    <div class="inp_type_2 form-errors" -->
+                        <!-- focus / err -->
+                        <input type="email" name="userEmail" id="gcuseremail" placeholder="이메일 주소를 입력해주세요." class="valid"
+                            aria-invalid="false">
+                        <label id="gcuseremail_msg" class="validate_msg_label" style="color: red;"></label>
+                    </div>
+
+                    <b>이름</b>
+                    <div class="inp_type_2 form-errors btn-add">
+                        <input type="text" id="userName" name="userName" required="" class="required"
+                            data-msg-required="이름을 입력하세요." data-rule-minlength="2" data-rule-spacechar="true"
+                            data-rule-specialchar="true"><label id="userName-error"
+                            class="error help-block default_label_txt icon-ic_downwards_arrow" for="userName">이름
+                            입력</label>
+                        <button type="button" class="btn_etc" onclick="changeNickname();">중복 확인?</button>
+                    </div>
+
+                    <b>비밀번호</b>
+                    <div class="inp_type_2 form-errors form-password-rule">
+                        <input type="password" name="password" placeholder="비밀번호를 입력해주세요." id="new_pw"
+                            aria-autocomplete="list" class="valid" aria-invalid="false">
+                        <label id="new_pw_msg" class="validate_msg_label" style="color: blue;"></label>
+                    </div>
+
+                    <!-- <b>비밀번호 확인</b>
+                    <div class="inp_type_2 form-errors">
+                        <input type="password" name="upw_retry" placeholder="비밀번호를 입력해주세요." id="new_pw_re" class="valid"
+                            aria-invalid="false">
+                        <label id="new_pw_re_msg" class="validate_msg_label"></label>
+                    </div> -->
+
+                    <!-- <button type="button" id="joinBtn" class="btn_link gra_left_right_red btn_user_submit"
+                        style="background-color: #2AC1BC; color: rgb(255, 255, 255); border: none;"><span>가입하기</span></button> -->
+                    <input type="submit" value="회원가입">
+                </div>
+            </form>
+        </div>
 </body>
+
 </html>
