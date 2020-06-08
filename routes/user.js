@@ -3,19 +3,19 @@ var router = express.Router();
 const models = require("../models");
 
 router.get('/login', function (req, res, next) {
-  res.render('users/login', {
+  res.render('user/login', {
     title: '로그인 - 모두의 호텔리어'
   });
 });
 
 router.get('/passwdResetStart', function (req, res, next) {
-  res.render('users/passwdResetStart', {
+  res.render('user/passwdResetStart', {
     title: '비밀번호 찾기 - 모두의 호텔리어'
   });
 });
 
 router.get('/join', function(req, res, next) {
-  res.render("users/join");
+  res.render("user/join");
 });
 
 router.post("/join", function(req,res,next){
@@ -27,7 +27,7 @@ router.post("/join", function(req,res,next){
     password: body.password
   })
   .then( result => {
-    res.redirect("/users/join");
+    res.redirect("/user/join");
   })
   .catch( err => {
     console.log(err)
