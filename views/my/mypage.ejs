@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include ../viewmodules/head.ejs %>
+</head>
+
+<body>
+    <!-- Wrap -->
+    <div class="wrap">
+
+        <!-- Header -->
+        <header>
+            <% include ../viewmodules/header.ejs %>
+            <link rel="stylesheet" type="text/css" href="/stylesheets/common.css">
+        </header>
+
+        <!-- Bg Dimm -->
+        <div class="bg_dimm" onclick="close_layer();">&nbsp;</div>
+        <div class="bg_dimm_prevent">&nbsp;</div>
+
+        <!-- 추천검색어 -->
+        <div class="recommend_srch">
+            <div class="scroll_srch">
+                <div class="scroller">
+                    <div class="default" style="display:block">
+                        <strong>추천 검색어</strong>
+                        <ul></ul>
+                    </div>
+                    <!-- 연관검색어 -->
+                    <div class="chain">
+                        <ul></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="gnb_opacity"><button class="btn_close">닫기</button></div>
+        <div class="menu_wrap">
+
+            <div class="menu">
+                <div class="top">
+                    <!-- 회원 -->
+                    <div class="member">
+                        <div class="mem">
+                            <span class="pic"
+                                style="background:url('https://image.goodchoice.kr/profile/ico/ico_11.png') 50% 50% no-repeat;"></span>
+                            <p class="info">회원 Id</p>
+                        </div>
+                        <div class="bot">
+                            <a href="http://localhost:3000/my/point">
+                                <p>0P<br /><span>포인트</span></p>
+                            </a>
+                            <a href="http://localhost:3000/my/coupon">
+                                <p>0장<br /><span>쿠폰함</span></p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Iscroll -->
+                <div class="scroll_nav">
+                    <div class="scroller">
+                        <ul>
+                            <li><a href="http://localhost:3000/">홈</a></li>
+                            <li class="depth_2">
+                                <button type="button" class="has_ul"><span>숙소유형</span></button>
+                                <ul>
+                                    <li><a href="http://localhost:3000/product/home/1">모텔</a></li>
+                                    <li><a href="http://localhost:3000/product/search/2">호텔/리조트</a></li>
+                                    <li><a href="http://localhost:3000/product/search/3">펜션</a></li>
+                                    <li><a href="http://localhost:3000/product/search/6">게스트하우스</a></li>
+                                    <li><a href="http://localhost:3000/product/search/5">캠핑·글램핑</a></li>
+                                    <li><a href="http://localhost:3000/product/search/7">한옥 </a></li>
+                                </ul>
+                            </li>
+                            <li><a href="http://localhost:3000/product/srp">내주변</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="http://localhost:3000/my/reserveList">예약 내역</a></li>
+                            <li><a href="http://localhost:3000/my/recentrooms">최근 본 숙소</a></li>
+                            <li><a href="http://localhost:3000/my/mypage">내 정보 관리</a></li>
+                        </ul>
+                        <ul>
+                            <li class="depth_2"><button type="button" class="has_ul"><span>더보기</span></button>
+                                <ul>
+                                    <li><a href="http://localhost:3000/more/notice">공지사항</a></li>
+                                    <li><a href="http://localhost:3000/more/event">이벤트</a></li>
+                                    <li><a href="http://localhost:3000/more/project">혁신 프로젝트</a></li>
+                                    <li><a href="http://localhost:3000/more/faq">고객문의</a></li>
+                                    <li><a href="http://localhost:3000/more/terms">약관 및 정책</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="center">
+                            <p>여기어때 고객행복센터</p>
+                            <p><a href="tel:1670-6250">1670-6250</a></p>
+                            <p>오전 9시 - 새벽 3시<br />(점심시간 : 오후 12시 - 오후 1시)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //Mobile Menu -->
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="/css/my.css?rand=1591250196" />
+
+        <!-- Sub Top -->
+        <div class="sub_top_wrap">
+            <div class="sub_top bg_kong_2">
+                <h2>내정보</h2>
+            </div>
+        </div>
+        <!-- //Sub Top -->
+        <!-- Content  -->
+        <div id="content" class="sub_wrap my_wrap">
+            <p class="sub_title">내 정보 관리</p>
+
+            <!-- Nav -->
+            <nav>
+                <ul>
+                    <li><a class="" href="/my/point">포인트</a></li>
+                    <li><a class="" href="/my/coupon">쿠폰함</a></li>
+                    <li><a class="" href="/my/reserveList">예약 내역</a></li>
+                    <li><a class="" href="/my/recentrooms">최근 본 숙소</a></li>
+                    <li><a class="active" href="/my/mypage">내 정보 관리</a></li>
+                    <!-- <li><a class="active" href="/my/mypage">내 정보 관리</a></li> -->
+                </ul>
+            </nav>
+            <div class="align_rt">
+                <div class="mypage">
+                    <form name="form1" action="http://localhost:3000/my/mypageInfoUpdate" autocomplete="off"
+                        method="post" novalidate data-form="unick">
+                        <!-- 폼전송시 전달되는 data target element -->
+                        <div class="mypageForm__form-inputs-wrap" aria-hidden="true">
+                            <input type="text" name="unick" id="test1" aria-hidden="true" value="회원 Id" />
+                            <input type="text" name="uname" aria-hidden="true" value="" />
+                            <input type="tel" name="uphone" aria-hidden="true" value="010****1234" />
+                        </div>
+
+                        <!-- <input type="hidden" name="yeogi_token" value="2e168d8d1c1c2f49072b469180b947c6"> -->
+                        <input type="hidden" name="utype" value="3">
+
+                        <!--// 폼전송시 전달되는 data target element -->
+                        <section class="top_area">
+                            <strong>내 정보 수정</strong>
+                            <div class="login_info">
+                                <div><img src="http://localhost:3000/images/image.png" alt=""></div>
+                            </div>
+
+                            <div class="pw_input">
+                                <div class="pw_input__title">
+                                    <b>닉네임</b>
+                                    <span class="title__uinfo">회원 Id</span>
+                                </div>
+                                <section class="modifying-section">
+                                    <p class="inp_wrap remove form-errors">
+                                        <input type="text" value="회원 Id" placeholder="체크인시 필요한 정보입니다."
+                                            data-input="unick" data-msg-required="닉네임을 입력하세요." data-rule-minlength="2"
+                                            data-rule-spaceChar="true" data-rule-specialChar="true" />
+                                    </p>
+                                    <button type="button" class="btn_etc btn_confirm active"
+                                        onclick="changeNickname();">딴거할래요</button> <!-- 활성화 클래스 'active' -->
+                                </section>
+                                <div class="pw_input__btns-wrap">
+                                    <button class="btns-wrap__edit-btn" type="button">수정</button>
+                                    <button class="btns-wrap__submit-btn" type="submit">수정완료</button>
+                                    <button class="btns-wrap__cancel-btn" type="button">수정취소</button>
+                                </div>
+                            </div>
+                        </section>
+                    </form>
+                    <form name="form2" action="http://localhost:3000/my/mypageInfoUpdate" autocomplete="off"
+                        method="post" novalidate data-form="uname">
+                        <!-- 폼전송시 전달되는 data target element -->
+                        <div class="mypageForm__form-inputs-wrap" aria-hidden="true">
+                            <input type="text" name="unick" aria-hidden="true" value="회원 Id" />
+                            <input type="text" name="uname" aria-hidden="true" value="" />
+                            <input type="tel" name="uphone" aria-hidden="true" value="010****1234" />
+                        </div>
+                        <input type="hidden" name="yeogi_token" value="2e168d8d1c1c2f49072b469180b947c6">
+                        <input type="hidden" name="utype" value="3">
+
+                        <section class="top_area">
+                            <div class="pw_input">
+                                <div class="pw_input__title">
+                                    <b>예약자 이름</b>
+                                    <span class="title__uinfo"></span>
+                                </div>
+                                <section class="modifying-section">
+                                    <p class="inp_wrap remove form-errors">
+                                        <input type="text" id="uname" value="" placeholder="체크인시 필요한 정보입니다."
+                                            data-input="uname" data-rule-spaceChar="true"
+                                            data-rule-specialChar="true" />
+                                    </p>
+                                </section>
+                                <div class="pw_input__btns-wrap">
+                                    <button class="btns-wrap__edit-btn" type="button"
+                                        style="?android:attr/borderlessButtonStyle">수정</button>
+                                    <button class="btns-wrap__submit-btn" type="submit">수정완료</button>
+                                    <button class="btns-wrap__cancel-btn" type="button"
+                                        style="?android:attr/borderlessButtonStyle">수정취소</button>
+                                </div>
+                            </div>
+                        </section>
+                    </form>
+
+                    <form name="form3" action="http://localhost:3000/my/mypageInfoUpdate" autocomplete="off"
+                        method="post" novalidate data-form="uphone">
+                        <section>
+                            <!-- 폼전송시 전달되는 data target element -->
+                            <div class="mypageForm__form-inputs-wrap" aria-hidden="true">
+                                <input type="text" name="unick" aria-hidden="true" value="회원 Id" />
+                                <input type="text" name="uname" aria-hidden="true" value="" />
+                                <input type="tel" name="uphone" aria-hidden="true" value="010****1234" />
+                            </div>
+                            <input type="hidden" name="yeogi_token" value="2e168d8d1c1c2f49072b469180b947c6">
+                            <input type="hidden" name="utype" value="3">
+                            <div class="pw_input phone_confirm">
+                                <div class="pw_input__title">
+                                    <b>휴대폰 번호</b>
+                                    <span class="title__uinfo">010****1234</span>
+                                    <div class="safety_txt">개인 정보 보호를 위해 내 정보는 모두 안전하게 암호화됩니다.</div>
+                                </div>
+                                <div class="modifying-section">
+                                    <div id="sendCode">
+                                        <section>
+                                            <div class="inp_wrap remove form-errors">
+                                                <input type="tel" id="phone_number" value=""
+                                                    placeholder="체크인시 필요한 정보입니다." maxlength="13" data-input="uphone"
+                                                    data-msg-required="휴대폰 번호를 인증받으세요." data-rule-phonenumber="true" />
+                                                <button type="button" class="btn_checked">확인</button>
+                                            </div>
+                                            <button type="button" class="btn_send btn_confirm">인증번호 전송</button>
+                                            <!-- 활성화 클래스 'active' -->
+                                        </section>
+                                    </div>
+                                    <div id="verificationCode">
+                                        <b>인증 번호</b>
+                                        <section>
+                                            <div class="inp_wrap remove">
+                                                <input type="tel" id="digit" minlength="4" maxlength="4">
+                                                <span class="timer">&nbsp;</span>
+                                            </div>
+                                            <button type="button" class="btn_ok btn_confirm"
+                                                data-verification-type="call"
+                                                data-verification-next="mypageVerify">확인</button>
+                                        </section>
+                                    </div>
+                                    <input type="hidden" id="phone_certification_point" value="MYPAGE"
+                                        style="display: none;">
+                                </div>
+                                <div class="pw_input__btns-wrap">
+                                    <button class="btns-wrap__edit-btn " type="button">수정</button>
+                                    <button class="btns-wrap__submit-btn" type="submit">수정완료</button>
+                                    <button class="btns-wrap__cancel-btn" type="button">수정취소</button>
+                                </div>
+                            </div>
+                        </section>
+                    </form>
+                    <!-- <button class="btn_red_fill btn_one" type="submit">저장</button>-->
+
+                </div>
+
+                <div class="bot_btn">
+                    <p>여기어때를 이용하고 싶지 않으신가요?</p>
+                    <button type="button"
+                        onclick="pop_twobtn('ell','로그아웃 하시겠습니까?','취소','로그아웃','close_layer()','logoutPro()');">로그아웃</button>
+                    <button type="button" onclick="pop_layer_w('pop_withdraw');" type="button">회원탈퇴</button>
+                </div>
+            </div>
+        </div>
+        <!-- //Content  -->
+
+
+        <!-- 팝업 : 회원탈퇴 pop_layer_w('pop_withdraw') -->
+        <div class="layer_w pop_withdraw">
+            <section>
+                <div class="fix_title">
+                    <strong>회원탈퇴</strong>
+                    <button onclick="layer_w_close();">닫기</button>
+                </div>
+                <div class="cont">
+                    <b>주의사항</b>
+                    <strong>회원탈퇴 전 반드시 확인해주세요.</strong>
+                    <ul class="dot_txt">
+                        <li>회원탈퇴 시 계정 정보는 복구가 불가하며 1일 이후 재가입 가능합니다.</li>
+                        <li>현재 보유 중인 포인트, 마일리지, 쿠폰은 모두 소멸되며 복구할 수 없습니다.</li>
+                        <li>탈퇴 후, 기존 가입 휴대기기로 재가입 시 첫 혜택을 받을 수 없습니다. (신규 회원 쿠폰, 첫 리뷰 작성 1000포인트 등)</li>
+                    </ul>
+                    <div class="fix_wrap">
+                        <p><input type="checkbox" class="inp_chk_03" id="residue_night">
+                            <label for="residue_night">주의사항 모두 동의합니다.</label></p>
+                        <button class="btn_red_fill" onclick="userout();">회원탈퇴</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+</body>
+
+</html>

@@ -10,8 +10,13 @@ router.get('/', function (req, res, next) {
 
 router.get('/login', function (req, res, next) {
   let session = req.session;
+  let queryURL = "/";
 
-  if (session.email) {
+  queryURL = queryURL + req.query.returnUrl;
+
+  if (session.email && queryURL) {
+    res.redirect(queryURL);
+  } else if (session.email) {
     res.redirect("/");
   } else {
     res.render("user/login", {
