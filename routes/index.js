@@ -28,43 +28,6 @@ router.get('/product/earlybird', function (req, res, next) {
   });
 });
 
-router.get('/user/login', function (req, res, next) {
-  res.render('login', {
-    title: '로그인 - 모두의 호텔리어'
-  });
-});
-
-router.get('/user/join', function (req, res, next) {
-  res.render('join', {
-    title: '회원가입 - 모두의 호텔리어'
-  });
-});
-
-router.get('user/passwdResetStart', function (req, res, next) {
-  res.render('passwdResetStart', {
-    title: '비밀번호 찾기 - 모두의 호텔리어'
-  });
-});
-
-
-router.get('/user/login2', function (req, res, next) {
-  res.render('login', {
-    title: '로그인 - 모두의 호텔리어'
-  });
-});
-
-router.get('/user/join2', function (req, res, next) {
-  res.render('join', {
-    title: '회원가입 - 모두의 호텔리어'
-  });
-});
-
-router.get('user/passwdResetStart2', function (req, res, next) {
-  res.render('passwdResetStart', {
-    title: '비밀번호 찾기 - 모두의 호텔리어'
-  });
-});
-
 router.get('/my/mypage', function (req, res, next) {
   res.render('mypage', {
     title: '내 정보 관리 - 모두의 호텔리어'
