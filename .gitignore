@@ -1,2 +1,2 @@
-# ignore all files in the build/ directory
-build/
+# ignore all files in the config/ directory
+config/
