@@ -2,7 +2,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('accommodations', {
-      accommodationId: {
+      id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
@@ -27,9 +27,16 @@ module.exports = {
       phoneNumber: {
         type: Sequelize.STRING,
         allowNull: false
+      },
+      description: {
+        type: DataTypes.TEXT,
+        allowNull: true
+      },
+      grade: {
+        type: DataTypes.DECIMAL(3, 1),
+        allowNull: true
       }
-    }
-    );
+    });
   },
   down: (queryInterface, Sequelize) => {
     return queryInterface.dropTable('accommodations');

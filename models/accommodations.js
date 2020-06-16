@@ -1,7 +1,7 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const accommodations = sequelize.define('accommodations', {
-    accommodationId: {
+    id: {
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
@@ -26,12 +26,20 @@ module.exports = (sequelize, DataTypes) => {
     phoneNumber: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: true
+    },
+    grade: {
+      type: DataTypes.DECIMAL(3, 1),
+      allowNull: true
     }
   }, {
     timestamps: false,
   });
   accommodations.associate = function (models) {
-    // associations can be defined here
+    // accommodations.hasOne(models.accommodationmemo);
   };
   return accommodations;
 };

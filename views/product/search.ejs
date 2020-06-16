@@ -14,6 +14,8 @@
             <% include ../viewmodules/header.ejs %>
             <link rel="stylesheet" type="text/css" href="/stylesheets/common.css">
             <link rel="stylesheet" type="text/css" href="/stylesheets/product.css">
+
+
         </header>
 
         <!-- Bg Dimm -->
@@ -198,7 +200,7 @@
                         <h3>상세조건</h3>
                         <div class="btn_wrap">
                             <button type="button"
-                                onclick="window.location.href='http://localhost:3000/product/search/2/2003?sel_date=2020-06-08&sel_date2=2020-06-09'">초기화</button>
+                                onclick="window.location.href='http://localhost:3000/product/search/1/2003?sel_date=2020-06-08&sel_date2=2020-06-09'">초기화</button>
                             <button type="submit">적용</button>
                         </div>
                         <section>
@@ -383,13 +385,14 @@
                                 <% for(let accommodation of accommodations) { %>
                                 <li class="list_2 adcno2">
                                     <a href="http://localhost:3000/product/detail?ano=6903&adcno=2&sel_date=2020-06-08&sel_date2=2020-06-09"
-                                        data-ano="6903" data-adcno="2" data-alat="37.513667" data-alng="127.016166"
+                                        data-ano=<%= accommodation.accommodationId %>
+                                        data-adcno=<%= accommodation.division %> data-alat="0" data-alng="0"
                                         data-distance="0" data-affiliate="1">
                                         <p class="pic">
                                             <img class="lazy align"
                                                 data-original="http://localhost:3000/resize_1000X500x0/affiliate/2016/05/24/5743fc4cd44d8.jpg"
-                                                src="http://localhost:3000/images/web_v3/bg_trans.png"
-                                                alt="La TREE HOTEL(라 트리 호텔)" />
+                                                src="http://localhost:3000/images/211b0318091c6505e477fe593bd75a8e.jpg"
+                                                alt=<%= accommodation.accommodationName %> />
                                         </p>
                                         <div class="stage gra_black_vertical">
                                             <div class="evt_info"><span>어쩌구저쩌구[이벤트 1]</span></div>
@@ -398,7 +401,7 @@
                                                         style="color: rgba(255,255,255,1); background-color: rgba(106,120,141,1);">N성급</span>
                                                 </div> <strong><%= accommodation.accommodationName %></strong>
                                                 <p class="score">
-                                                    <em>x.x</em>&nbsp;<span>만족해요</span>&nbsp;(xxx) </p>
+                                                    <em><%= accommodation.grade %></em>&nbsp;<span>만족해요</span>&nbsp;(xxx) </p>
                                                 <p><%= accommodation.addressCode %></p>
                                             </div>
                                             <div class="price">
@@ -468,7 +471,7 @@
     <!-- Footer -->
     <footer>
         <% include ../viewmodules/footer.ejs %>
-    </footer>
+                                </footer>
 
                         </div>
 

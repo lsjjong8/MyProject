@@ -34,7 +34,7 @@ router.get('/board', async function(req, res, next) {
             postId: post.id
           }
         }
-      })
+      });
       if(result2){
         post.replies = result2.replies
       }

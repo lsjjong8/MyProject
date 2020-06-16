@@ -7,8 +7,27 @@ router.get('/search/:id', async function (req, res, next) {
   let divisionID = req.params.id;
   let result = await models.accommodations.findAll();
 
+  // try {
+  //   if (result) {
+  //     for (let accommodation of result) {
+  //       console.log(accommodation);
+  //       let result2 = await models.accommodations.findOne({
+  //         include: {
+  //           model: models.accommodationmemo,
+  //           where: {
+  //             id: accommodation.id
+  //           }
+  //         }
+  //       });
+
+  //       if(result2){
+  //         accommodation.grade = result2.grade;
+  //       }
+  //     }
+  //   }
+
   if (divisionID == 1) {
-    res.render("product/search.ejs", {
+    res.render("product/search", {
       title: '호텔 예약 - 모두의 호텔리어',
       session: session,
       accommodations: result
@@ -16,6 +35,7 @@ router.get('/search/:id', async function (req, res, next) {
   }
 
   res.redirect("/");
+
 });
 
 router.get('/srp', function (req, res, next) {
@@ -47,17 +67,3 @@ router.get('/detail', function (req, res, next) {
 
 
 module.exports = router;
-
-// router.get('/search/:id', function (req, res, next) {
-//   let session = req.session;
-//   let divisionID = req.params.id;
-
-//   if (divisionID == 1) {
-//     res.render('product/search.ejs', {
-//       title: '호텔 예약 - 모두의 호텔리어',
-//       session: session
-//     });
-//   }
-
-//   res.redirect("/");
-// });

@@ -141,8 +141,26 @@
                         <!-- <span class="tab_btn">여기어때 언론보도 <i class="ico_new">NEW</i></span> -->
                     </div>
 
+                    <% for(let post of posts) { %>
+                        <table>
+                            <tr>
+                                <td>번호</td>
+                                <td>제목</td>
+                                <td>작성자</td>
+                                <td>작성일</td>
+                            </tr>
+                            <tr>
+                                <td><%= post.id %></td>
+                                <td><%= post.title %></td>
+                                <td><%= post.writer %></td>
+                                <td><%= post.createdAt %></td>
+                            </tr>
+                        </table>
+                        <hr>
+                    <% } %>
+                    
                     <!-- 공지사항  -->
-                    <div class="tab_each">
+                    <!-- <div class="tab_each">
                         <ul id="notices" class="show_list open_list">
                             <template v-for="row in result">
                                 <li>
@@ -161,28 +179,7 @@
                         <div id="notice_pagination">
                             <my-pagination></my-pagination>
                         </div>
-                    </div>
-
-                    <!-- 보도 
-				<div class="tab_each" style="display:none">
-					<ul id="notice_release" class="show_list news_list">
-                        <template v-for="row in result">
-                            <li>
-                                <a :href="row.ntrlink" target="_blank">
-                                    <p>{{row.ntrtitle}}</p>
-                                    <span>{{row.ntreg2}}
-                                    <i class="ico_new" v-if="row.new_icon_show == 'Y'">NEW</i>
-                                </span>
-                                </a>
-                            </li>
-                        </template>
-					</ul>
-
-                    <div id="notice_release_pagination">
-                        <my-pagination></my-pagination>
-                    </div>
-				</div>
-				-->
+                    </div> -->
                 </div>
                 <!-- //Notice -->
 

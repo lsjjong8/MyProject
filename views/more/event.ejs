@@ -132,7 +132,24 @@
             <div class="align_rt">
 
                 <!-- Event -->
-                <div class="event">
+                <% for(let post of posts) { %>
+                <table>
+                    <tr>
+                        <td>번호</td>
+                        <td>제목</td>
+                        <td>작성자</td>
+                        <td>작성일</td>
+                    </tr>
+                    <tr>
+                        <td><%= post.id %></td>
+                        <td><%= post.title %></td>
+                        <td><%= post.writer %></td>
+                        <td><%= post.createdAt %></td>
+                    </tr>
+                </table>
+                <hr>
+                <% } %>
+                <!-- <div class="event">
 
                     <div class="mobile_top">이벤트</div>
 
@@ -156,7 +173,7 @@
                         <my-pagination></my-pagination>
                     </div>
 
-                </div>
+                </div> -->
                 <!-- //Event -->
 
             </div>
@@ -165,7 +182,7 @@
         <!-- //Content  -->
 
         <!-- 당첨자 확인 팝업 -->
-        <div class="layer pop_fix pop_win">
+        <!-- <div class="layer pop_fix pop_win">
             <div class="fix_title">
                 당첨자 확인
                 <button onclick="close_layer();">닫기</button>
@@ -183,7 +200,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <footer>
             <% include ../viewmodules/footer.ejs %>
