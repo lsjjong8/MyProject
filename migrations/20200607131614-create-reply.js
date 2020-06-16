@@ -12,13 +12,17 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
+      division: {
+        allowNull: false,
+        type: Sequelize.INTEGER
+      },
       writer: {
         type: Sequelize.STRING,
         allowNull: false,
       },
       content: {
         type: Sequelize.TEXT,
-        allowNull: false,
+        allowNull: true,
       },
       createdAt: {
         allowNull: false,

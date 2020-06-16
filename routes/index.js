@@ -20,7 +20,11 @@ router.get('/b2b/intro', function (req, res, next) {
 
 // 게시글 목록
 router.get('/board', async function(req, res, next) {
-  let result = await models.post.findAll();
+  let result = await models.post.findAll({
+    order: [
+      ['id', 'DESC']
+    ]
+  });
   if (result){
     for(let post of result){
       let result2 = await models.post.findOne({
@@ -41,27 +45,12 @@ router.get('/board', async function(req, res, next) {
   });
 });
 
-router.get('/board', function (req, res, next) {
-  models.post.findAll({
-      order: [
-        ['id', 'DESC']
-      ]
-    })
-    .then(result => {
-      res.render("show", {
-        posts: result
-      });
-    })
-    .catch(function (err) {
-      console.log(err);
-    });
-});
-
 // 게시글 등록
 router.post('/board', function(req, res, next) {
   let body = req.body;
 
   models.post.create({
+    division: 1,
     title: body.inputTitle,
     writer: body.inputWriter
   })
@@ -132,6 +121,7 @@ router.post("/reply/:postID", function(req, res, next){
   let body = req.body;
 
   models.reply.create({
+    division: 1,
     postId: postID,
     writer: body.replyWriter,
     content: body.replyContent
@@ -145,3 +135,19 @@ router.post("/reply/:postID", function(req, res, next){
 });
 
 module.exports = router;
+
+// router.get('/board', function (req, res, next) {
+//   models.post.findAll({
+//       order: [
+//         ['id', 'DESC']
+//       ]
+//     })
+//     .then(result => {
+//       res.render("show", {
+//         posts: result
+//       });
+//     })
+//     .catch(function (err) {
+//       console.log(err);
+//     });
+// });

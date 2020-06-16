@@ -1,10 +1,18 @@
 'use strict';
+
+const { sequelize } = require("../models");
+
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('posts', {
       id: {
         allowNull: false,
         autoIncrement: true,
+        primaryKey: true,
+        type: Sequelize.INTEGER
+      },
+      division: {
+        allowNull: false,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
@@ -15,6 +23,10 @@ module.exports = {
       writer: {
         type: Sequelize.STRING,
         allowNull: false,
+      },
+      content: {
+        type: Sequelize.TEXT,
+        allowNull: true,
       },
       createdAt: {
         allowNull: false,
