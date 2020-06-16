@@ -20,11 +20,11 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   reply.associate = function(models){
-    // reply.belongsTo(models.post, {
-    //   foreignKey: "postId"
-    // })
-
     // 복합키 잡기 해결 필요
+    reply.belongsTo(models.post, {
+      foreignKey: ["postId", "division"]
+    })
+
     // models.post.hasMany(reply, {
     //   foreignKey: "id"
     // });
