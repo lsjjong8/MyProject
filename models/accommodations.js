@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-    addressCode: {
+    addressId: {
       type: DataTypes.BIGINT,
       allowNull: false
     },
@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-    phoneNumber: {
+    phonenumber: {
       type: DataTypes.STRING,
       allowNull: false
     },
@@ -39,7 +39,9 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
   });
   accommodations.associate = function (models) {
-    // accommodations.hasOne(models.accommodationmemo);
+    accommodations.belongsTo(models.address, {
+      foreignKey: "addressId"
+    });
   };
   return accommodations;
 };

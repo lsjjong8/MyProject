@@ -7,24 +7,22 @@ router.get('/search/:id', async function (req, res, next) {
   let divisionID = req.params.id;
   let result = await models.accommodations.findAll();
 
-  // try {
-  //   if (result) {
-  //     for (let accommodation of result) {
-  //       console.log(accommodation);
-  //       let result2 = await models.accommodations.findOne({
-  //         include: {
-  //           model: models.accommodationmemo,
-  //           where: {
-  //             id: accommodation.id
-  //           }
-  //         }
-  //       });
-
-  //       if(result2){
-  //         accommodation.grade = result2.grade;
-  //       }
-  //     }
-  //   }
+  try {
+    if (result) {
+      for (let accommodation of result) {
+        let result2 = await models.address.findOne({
+          where: {
+            id: accommodation.addressId
+          }
+        });
+        if (result2) {
+          accommodation.addressName = result2.addressName;
+        }
+      }
+    }
+  } catch (e) {
+    console.log(e);
+  }
 
   if (divisionID == 1) {
     res.render("product/search", {
