@@ -1,36 +1,36 @@
 <section>
-    <img src="http://localhost/images/image.png" alt="모두의 호텔리어 CI" width="20%" />
+    <img src="http://ec2-15-165-203-52.ap-northeast-2.compute.amazonaws.com/images/image.png" alt="모두의 호텔리어 CI" width="20%" />
     <h1><a href="/" title="모두의 호텔리어">모두의 호텔리어</a></h1>
     <button type="button" class="btn_menu nav_open">메뉴</button>
     <button type="button" class="btn_srch srch_open">검색</button>
     <ul class="gnb_pc">
-        <li><a href="http://localhost/product/srp">내주변</a></li>
-        <li><a href="http://localhost/user/login?returnUrl=my%2FreserveList">예약내역</a></li>
-        <li><a href="http://localhost/more">더보기</a></li>
+        <li><a href="http://ec2-15-165-203-52.ap-northeast-2.compute.amazonaws.com/product/srp">내주변</a></li>
+        <li><a href="http://ec2-15-165-203-52.ap-northeast-2.compute.amazonaws.com/user/login?returnUrl=my%2FreserveList">예약내역</a></li>
+        <li><a href="http://ec2-15-165-203-52.ap-northeast-2.compute.amazonaws.com/more">더보기</a></li>
         <li class="over">
             <!-- <button type="button"><span>더보기</span></button> -->
             <ul class="list_03">
-                <li><a href="http://localhost/more/notice">공지사항</a></li>
-                <li><a href="http://localhost/more/event">이벤트</a></li>
-                <li><a href="http://localhost/more/project">프로젝트</a></li>
-                <li><a href="http://localhost/more/faq">자주 묻는 질문</a></li>
-                <li><a href="http://localhost/more/inquiry">1:1 문의</a></li>
-                <li><a href="http://localhost/more/terms">약관 및 정책</a></li>
+                <li><a href="http://ec2-15-165-203-52.ap-northeast-2.compute.amazonaws.com/more/notice">공지사항</a></li>
+                <li><a href="http://ec2-15-165-203-52.ap-northeast-2.compute.amazonaws.com/more/event">이벤트</a></li>
+                <li><a href="http://ec2-15-165-203-52.ap-northeast-2.compute.amazonaws.com/more/project">프로젝트</a></li>
+                <li><a href="http://ec2-15-165-203-52.ap-northeast-2.compute.amazonaws.com/more/faq">자주 묻는 질문</a></li>
+                <li><a href="http://ec2-15-165-203-52.ap-northeast-2.compute.amazonaws.com/more/inquiry">1:1 문의</a></li>
+                <li><a href="http://ec2-15-165-203-52.ap-northeast-2.compute.amazonaws.com/more/terms">약관 및 정책</a></li>
             </ul>
         </li>
         <% if(session.email){ %>
-        <li class="over pic"><a href="http://localhost/my/mypage"><img
-                    src="http://localhost/profile/ico/ico_15.png" alt="" /></a>
+        <li class="over pic"><a href="http://ec2-15-165-203-52.ap-northeast-2.compute.amazonaws.com/my/mypage"><img
+                    src="http://ec2-15-165-203-52.ap-northeast-2.compute.amazonaws.com/profile/ico/ico_15.png" alt="" /></a>
             <ul class="list_04" style="display:none">
                 <li><b>회원</b></li>
-                <li><a href="http://localhost/my/mypage">내정보</a></li>
-                <li><a href="http://localhost/my/point" data-point="0">포인트
+                <li><a href="http://ec2-15-165-203-52.ap-northeast-2.compute.amazonaws.com/my/mypage">내정보</a></li>
+                <li><a href="http://ec2-15-165-203-52.ap-northeast-2.compute.amazonaws.com/my/point" data-point="0">포인트
                         <!-- span>0P</span --></a></li>
-                <li><a href="http://localhost/my/coupon">쿠폰함
+                <li><a href="http://ec2-15-165-203-52.ap-northeast-2.compute.amazonaws.com/my/coupon">쿠폰함
                         <!-- span>0장</span --></a></li>
-                <li><a href="http://localhost/my/reserveList">예약내역
+                <li><a href="http://ec2-15-165-203-52.ap-northeast-2.compute.amazonaws.com/my/reserveList">예약내역
                         <!-- span>0건</span --></a></li>
-                <li><a href="http://localhost/my/recentrooms">최근 본 숙소
+                <li><a href="http://ec2-15-165-203-52.ap-northeast-2.compute.amazonaws.com/my/recentrooms">최근 본 숙소
                         <!-- span>0개</span --></a></li>
                 <li><button type="button" class="pop_logout_open">로그아웃</button></li>
             </ul>
@@ -39,7 +39,7 @@
             <input type="submit" value="로그아웃">
         </form>
         <% } else{ %>
-        <li><a href="http://localhost/user/login"><span>로그인</span></a></li>
+        <li><a href="http://ec2-15-165-203-52.ap-northeast-2.compute.amazonaws.com/user/login"><span>로그인</span></a></li>
         <% } %>
     </ul>
 
