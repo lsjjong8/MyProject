@@ -1,24 +1,20 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Accommodations = sequelize.define('Accommodations', {
+  const Boards = sequelize.define('Boards', {
     division: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    classification: {
+    memberId: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    name: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    addressCode: {
-      type: DataTypes.BIGINT,
-      allowNull: false
-    },
-    phoneNumber: {
-      type: DataTypes.STRING,
+    contents: {
+      type: DataTypes.TEXT,
       allowNull: false
     }
   }, 
@@ -26,8 +22,8 @@ module.exports = (sequelize, DataTypes) => {
     // timestamps: false,
   }
   );
-  Accommodations.associate = function(models) {
+  Boards.associate = function (models) {
     // associations can be defined here
   };
-  return Accommodations;
+  return Boards;
 };
