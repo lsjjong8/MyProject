@@ -134,6 +134,15 @@ router.post("/reply/:postID", function(req, res, next){
   });
 });
 
+router.get('/reservation', function (req, res, next) {
+  let session = req.session;
+
+  res.render('reservation', {
+    title: '예약 - 모두의 호텔리어',
+    session: session
+  });
+});
+
 module.exports = router;
 
 // router.get('/board', function (req, res, next) {

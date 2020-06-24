@@ -1,268 +1,373 @@
 <!doctype html>
 <html lang="ko">
+
 <head>
     <% include ../viewmodules/head.ejs %>
 </head>
+
 <body>
 
-<!-- Wrap -->
-<div class="wrap">
+    <!-- Wrap -->
+    <div class="wrap">
 
-    <!-- Header -->
-    <header>
-        <% include ../viewmodules/header.ejs %>
-        <link rel="stylesheet" type="text/css" href="/stylesheets/common.css">
-        <link rel="stylesheet" type="text/css" href="/stylesheets/product.css">
-    </header>
+        <!-- Header -->
+        <header>
+            <% include ../viewmodules/header.ejs %>
+            <link rel="stylesheet" type="text/css" href="/stylesheets/common.css">
+            <link rel="stylesheet" type="text/css" href="/stylesheets/product.css">
+        </header>
 
-    <!-- Bg Dimm -->
-    <div class="bg_dimm" onclick="close_layer();">&nbsp;</div>
-    <div class="bg_dimm_prevent">&nbsp;</div>
+        <!-- Bg Dimm -->
+        <div class="bg_dimm" onclick="close_layer();">&nbsp;</div>
+        <div class="bg_dimm_prevent">&nbsp;</div>
 
-    <!-- 추천검색어 -->
-    <div class="recommend_srch">
-        <div class="scroll_srch">
-            <div class="scroller">
-                <div class="default"  style="display:block">
-                    <strong>추천 검색어</strong>
-                    <ul></ul>
-                </div>
-                <!-- 연관검색어 -->
-                <div class="chain">
-                    <ul></ul>
+        <!-- 추천검색어 -->
+        <div class="recommend_srch">
+            <div class="scroll_srch">
+                <div class="scroller">
+                    <div class="default" style="display:block">
+                        <strong>추천 검색어</strong>
+                        <ul></ul>
+                    </div>
+                    <!-- 연관검색어 -->
+                    <div class="chain">
+                        <ul></ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Mobile Menu -->
-    <div class="gnb_opacity"><button class="btn_close">닫기</button></div>
-    <div class="menu_wrap">
+        <!-- Mobile Menu -->
+        <div class="gnb_opacity"><button class="btn_close">닫기</button></div>
+        <div class="menu_wrap">
 
-        <div class="menu">
-            <div class="top">
-                                    <!-- 비회원 -->
+            <div class="menu">
+                <div class="top">
+                    <!-- 비회원 -->
                     <div class="guest">
                         <div class="btn_join">
-                            로그인 후 예약하시면<br>할인 쿠폰과 추가 혜택을 받을 수 있어요.<br/>
+                            로그인 후 예약하시면<br>할인 쿠폰과 추가 혜택을 받을 수 있어요.<br />
                             <a href="https://www.goodchoice.kr/user/login"><span>로그인</span></a>
                         </div>
                         <div class="bot">
                             <!-- 스크립트 링크 -->
-                            <a href="https://www.goodchoice.kr/user/login"><p>-<br/><span>포인트</span></p></a>
-                            <a href="https://www.goodchoice.kr/user/login"><p>-<br/><span>쿠폰함</span></p></a>
+                            <a href="https://www.goodchoice.kr/user/login">
+                                <p>-<br /><span>포인트</span></p>
+                            </a>
+                            <a href="https://www.goodchoice.kr/user/login">
+                                <p>-<br /><span>쿠폰함</span></p>
+                            </a>
                         </div>
                     </div>
-                            </div>
-            <!-- Iscroll -->
-            <div class="scroll_nav">
-                <div class="scroller">
-                    <ul>
-                        <li><a href="https://www.goodchoice.kr/">홈</a></li>
-                        <li class="depth_2">
-                            <button type="button" class="has_ul"><span>숙소유형</span></button>
-                            <ul>
-                                <li><a href="https://www.goodchoice.kr/product/home/1">모텔</a></li>
-                                <li><a href="https://www.goodchoice.kr/product/search/2">호텔/리조트</a></li>
-                                <li><a href="https://www.goodchoice.kr/product/search/3">펜션</a></li>
-                                <li><a href="https://www.goodchoice.kr/product/search/6">게스트하우스</a></li>
-                                <li><a href="https://www.goodchoice.kr/product/search/5">캠핑·글램핑</a></li>
-                                <li><a href="https://www.goodchoice.kr/product/search/7">한옥 </a></li>
-                            </ul>
-                        </li>
-                        <li><a href="https://www.goodchoice.kr/product/srp">내주변</a></li>
-                    </ul>
-                                            <ul>
+                </div>
+                <!-- Iscroll -->
+                <div class="scroll_nav">
+                    <div class="scroller">
+                        <ul>
+                            <li><a href="https://www.goodchoice.kr/">홈</a></li>
+                            <li class="depth_2">
+                                <button type="button" class="has_ul"><span>숙소유형</span></button>
+                                <ul>
+                                    <li><a href="https://www.goodchoice.kr/product/home/1">모텔</a></li>
+                                    <li><a href="https://www.goodchoice.kr/product/search/2">호텔/리조트</a></li>
+                                    <li><a href="https://www.goodchoice.kr/product/search/3">펜션</a></li>
+                                    <li><a href="https://www.goodchoice.kr/product/search/6">게스트하우스</a></li>
+                                    <li><a href="https://www.goodchoice.kr/product/search/5">캠핑·글램핑</a></li>
+                                    <li><a href="https://www.goodchoice.kr/product/search/7">한옥 </a></li>
+                                </ul>
+                            </li>
+                            <li><a href="https://www.goodchoice.kr/product/srp">내주변</a></li>
+                        </ul>
+                        <ul>
                             <li><a href="https://www.goodchoice.kr/user/login?returnUrl=my%2FreserveList">예약 내역</a></li>
                         </ul>
-                                        <ul>
-                        <li class="depth_2"><button type="button" class="has_ul"><span>더보기</span></button>
-                            <ul>
-                                <li><a href="https://www.goodchoice.kr/more/notice">공지사항</a></li>
-                                <li><a href="https://www.goodchoice.kr/more/event">이벤트</a></li>
-                                <li><a href="https://www.goodchoice.kr/more/project">혁신 프로젝트</a></li>
-                                <li><a href="https://www.goodchoice.kr/more/faq">고객문의</a></li>
-                                <li><a href="https://www.goodchoice.kr/more/terms">약관 및 정책</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <div class="center">
-                        <p>여기어때 고객행복센터</p>
-                        <p><a href="tel:1670-6250">1670-6250</a></p>
-                        <p>오전 9시 - 새벽 3시<br/>(점심시간 : 오후 12시 - 오후 1시)</p>
+                        <ul>
+                            <li class="depth_2"><button type="button" class="has_ul"><span>더보기</span></button>
+                                <ul>
+                                    <li><a href="https://www.goodchoice.kr/more/notice">공지사항</a></li>
+                                    <li><a href="https://www.goodchoice.kr/more/event">이벤트</a></li>
+                                    <li><a href="https://www.goodchoice.kr/more/project">혁신 프로젝트</a></li>
+                                    <li><a href="https://www.goodchoice.kr/more/faq">고객문의</a></li>
+                                    <li><a href="https://www.goodchoice.kr/more/terms">약관 및 정책</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="center">
+                            <p>여기어때 고객행복센터</p>
+                            <p><a href="tel:1670-6250">1670-6250</a></p>
+                            <p>오전 9시 - 새벽 3시<br />(점심시간 : 오후 12시 - 오후 1시)</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- //Mobile Menu -->
+        <!-- //Mobile Menu -->
 
-    <!-- CSS -->
-<link rel="stylesheet" href="/css/owl.carousel.css"/>
-<link rel="stylesheet" href="/css/swiper.css?rand=1591859320"/>
-<link rel="stylesheet" href="/css/theme_icon.css?rand=1591859320"/>
-<link rel="stylesheet" href="/css/jquery-ui.css?rand=1591859320"/>
-<link rel="stylesheet" href="/css/product.css?rand=1591859320"/>
-
-
-<script type="application/ld+json">
-{
-    "@context" : "http://schema.org",
-    "@type" : "LocalBusiness",
-    "name" : "호텔 더 디자이너스 종로",
-    "image" : "https://image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bd61a2a4d.jpg",
-    "telephone" : "0222677474",
-    "address" : {
-        "@type" : "PostalAddress",
-        "streetAddress" : "14-1 산호장",
-        "addressLocality" : "서울 종로구 수표로 89-8"
-    },
-    "aggregateRating" : {
-        "@type" : "AggregateRating",
-        "bestRating" : "100",
-        "worstRating" : "10",
-        "ratingValue" : "84",
-        "ratingCount" : "3382"
-    } 
-}
-</script>
-<!-- Content  -->
-<div id="content" class="detail "> <!-- 비제휴점 inert_room 클래스 추가 -->
-
-    <!-- Top -->
-    <div class="top">
-
-        <!-- Left -->
-        <div class="left">
-
-            <!-- Gallery (Mobile) -->
-            <div class="gallery_m index_mobile">
-                				<div class="swiper-container swiper-default">
-					<ul class="swiper-wrapper">
-	                    						<li class="swiper-slide">
-                            <img src="//image.goodchoice.kr/images/web_v3/temp.png" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bd662fe2b.jpg"  alt="호텔 더 디자이너스 종로 | 로비" class="swiper-lazy" />
-			                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-						</li>
-		                						<li class="swiper-slide">
-                            <img src="//image.goodchoice.kr/images/web_v3/temp.png" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bd71eabdf.jpg"  alt="호텔 더 디자이너스 종로 | 슈페리어 더블" class="swiper-lazy" />
-			                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-						</li>
-		                						<li class="swiper-slide">
-                            <img src="//image.goodchoice.kr/images/web_v3/temp.png" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bd8b03bc8.jpg"  alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" />
-			                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-						</li>
-		                						<li class="swiper-slide">
-                            <img src="//image.goodchoice.kr/images/web_v3/temp.png" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bda080236.jpg"  alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" />
-			                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-						</li>
-		                						<li class="swiper-slide">
-                            <img src="//image.goodchoice.kr/images/web_v3/temp.png" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bd7b49ba9.jpg"  alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" />
-			                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-						</li>
-		                						<li class="swiper-slide">
-                            <img src="//image.goodchoice.kr/images/web_v3/temp.png" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bd9263c01.jpg"  alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" />
-			                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-						</li>
-		                						<li class="swiper-slide">
-                            <img src="//image.goodchoice.kr/images/web_v3/temp.png" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bd83dc346.jpg"  alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" />
-			                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-						</li>
-		                						<li class="swiper-slide">
-                            <img src="//image.goodchoice.kr/images/web_v3/temp.png" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2018/05/03/5aeac9433fdac.jpg"  alt="호텔 더 디자이너스 종로 | 디럭스 패밀리 트윈" class="swiper-lazy" />
-			                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-						</li>
-		                						<li class="swiper-slide">
-                            <img src="//image.goodchoice.kr/images/web_v3/temp.png" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bda75f4ca.jpg"  alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" />
-			                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-						</li>
-		                						<li class="swiper-slide">
-                            <img src="//image.goodchoice.kr/images/web_v3/temp.png" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bdb33d4a2.jpg"  alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" />
-			                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-						</li>
-		                						<li class="swiper-slide">
-                            <img src="//image.goodchoice.kr/images/web_v3/temp.png" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bdad2c913.jpg"  alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" />
-			                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-						</li>
-		                						<li class="swiper-slide">
-                            <img src="//image.goodchoice.kr/images/web_v3/temp.png" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bdbe1a695.jpg"  alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" />
-			                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-						</li>
-		                						<li class="swiper-slide">
-                            <img src="//image.goodchoice.kr/images/web_v3/temp.png" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bdb8d685b.jpg"  alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" />
-			                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-						</li>
-		                						<li class="swiper-slide">
-                            <img src="//image.goodchoice.kr/images/web_v3/temp.png" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bdc5a1564.jpg"  alt="호텔 더 디자이너스 종로 | 욕실" class="swiper-lazy" />
-			                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-						</li>
-		                						<li class="swiper-slide">
-                            <img src="//image.goodchoice.kr/images/web_v3/temp.png" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bdcae7999.jpg"  alt="호텔 더 디자이너스 종로 | 프론트 데스크" class="swiper-lazy" />
-			                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-						</li>
-		                						<li class="swiper-slide">
-                            <img src="//image.goodchoice.kr/images/web_v3/temp.png" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bdcfc9e39.jpg"  alt="호텔 더 디자이너스 종로 | 전경" class="swiper-lazy" />
-			                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-						</li>
-		                					</ul>
-					<div class="spinner_slide"><span></span></div>
-					<div class="index"><p><span></span> / <span></span></p></div>
-				</div>
-                			</div>
-
-            <!-- Gallery (PC) -->
-            <div class="gallery_pc">
-                <!-- Image Size : 490 x 348 -->
-                
-				<!-- Swiper -->
-				<div class="swiper-container gallery-top">
-					<ul class="swiper-wrapper">
-	                    						<li class="swiper-slide"><img data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bd662fe2b.jpg" alt="호텔 더 디자이너스 종로 | 로비" class="swiper-lazy" /></li>
-		                						<li class="swiper-slide"><img data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bd71eabdf.jpg" alt="호텔 더 디자이너스 종로 | 슈페리어 더블" class="swiper-lazy" /></li>
-		                						<li class="swiper-slide"><img data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bd8b03bc8.jpg" alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" /></li>
-		                						<li class="swiper-slide"><img data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bda080236.jpg" alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" /></li>
-		                						<li class="swiper-slide"><img data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bd7b49ba9.jpg" alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" /></li>
-		                						<li class="swiper-slide"><img data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bd9263c01.jpg" alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" /></li>
-		                						<li class="swiper-slide"><img data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bd83dc346.jpg" alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" /></li>
-		                						<li class="swiper-slide"><img data-src="//image.goodchoice.kr/resize_490x348/affiliate/2018/05/03/5aeac9433fdac.jpg" alt="호텔 더 디자이너스 종로 | 디럭스 패밀리 트윈" class="swiper-lazy" /></li>
-		                						<li class="swiper-slide"><img data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bda75f4ca.jpg" alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" /></li>
-		                						<li class="swiper-slide"><img data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bdb33d4a2.jpg" alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" /></li>
-		                						<li class="swiper-slide"><img data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bdad2c913.jpg" alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" /></li>
-		                						<li class="swiper-slide"><img data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bdbe1a695.jpg" alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" /></li>
-		                						<li class="swiper-slide"><img data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bdb8d685b.jpg" alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" /></li>
-		                						<li class="swiper-slide"><img data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bdc5a1564.jpg" alt="호텔 더 디자이너스 종로 | 욕실" class="swiper-lazy" /></li>
-		                						<li class="swiper-slide"><img data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bdcae7999.jpg" alt="호텔 더 디자이너스 종로 | 프론트 데스크" class="swiper-lazy" /></li>
-		                						<li class="swiper-slide"><img data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bdcfc9e39.jpg" alt="호텔 더 디자이너스 종로 | 전경" class="swiper-lazy" /></li>
-		                					</ul>
-				</div>
-				<div class="swiper-container gallery-thumbs">
-					<ul class="swiper-wrapper">
-	                    						<li class="swiper-slide"><img data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bd662fe2b.jpg" alt="호텔 더 디자이너스 종로 | 로비" class="swiper-lazy" /></li>
-		                						<li class="swiper-slide"><img data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bd71eabdf.jpg" alt="호텔 더 디자이너스 종로 | 슈페리어 더블" class="swiper-lazy" /></li>
-		                						<li class="swiper-slide"><img data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bd8b03bc8.jpg" alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" /></li>
-		                						<li class="swiper-slide"><img data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bda080236.jpg" alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" /></li>
-		                						<li class="swiper-slide"><img data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bd7b49ba9.jpg" alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" /></li>
-		                						<li class="swiper-slide"><img data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bd9263c01.jpg" alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" /></li>
-		                						<li class="swiper-slide"><img data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bd83dc346.jpg" alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" /></li>
-		                						<li class="swiper-slide"><img data-src="//image.goodchoice.kr/resize_490x348/affiliate/2018/05/03/5aeac9433fdac.jpg" alt="호텔 더 디자이너스 종로 | 디럭스 패밀리 트윈" class="swiper-lazy" /></li>
-		                						<li class="swiper-slide"><img data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bda75f4ca.jpg" alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" /></li>
-		                						<li class="swiper-slide"><img data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bdb33d4a2.jpg" alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" /></li>
-		                						<li class="swiper-slide"><img data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bdad2c913.jpg" alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" /></li>
-		                						<li class="swiper-slide"><img data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bdbe1a695.jpg" alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" /></li>
-		                						<li class="swiper-slide"><img data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bdb8d685b.jpg" alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" /></li>
-		                						<li class="swiper-slide"><img data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bdc5a1564.jpg" alt="호텔 더 디자이너스 종로 | 욕실" class="swiper-lazy" /></li>
-		                						<li class="swiper-slide"><img data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bdcae7999.jpg" alt="호텔 더 디자이너스 종로 | 프론트 데스크" class="swiper-lazy" /></li>
-		                						<li class="swiper-slide"><img data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bdcfc9e39.jpg" alt="호텔 더 디자이너스 종로 | 전경" class="swiper-lazy" /></li>
-		                					</ul>
-				</div>
-				<!-- Add Arrows -->
-				<div class="swiper-button-next"></div>
-				<div class="swiper-button-prev"></div>
-                
-<!-- //image.goodchoice.kr/resize_490x348/adimg_new/1491/8717/01.jpg? -->
+        <!-- CSS -->
+        <link rel="stylesheet" href="/css/owl.carousel.css" />
+        <link rel="stylesheet" href="/css/swiper.css?rand=1591859320" />
+        <link rel="stylesheet" href="/css/theme_icon.css?rand=1591859320" />
+        <link rel="stylesheet" href="/css/jquery-ui.css?rand=1591859320" />
+        <link rel="stylesheet" href="/css/product.css?rand=1591859320" />
 
 
+        <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "LocalBusiness",
+                "name": "호텔 더 디자이너스 종로",
+                "image": "https://image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bd61a2a4d.jpg",
+                "telephone": "0222677474",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "14-1 산호장",
+                    "addressLocality": "서울 종로구 수표로 89-8"
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "bestRating": "100",
+                    "worstRating": "10",
+                    "ratingValue": "84",
+                    "ratingCount": "3382"
+                }
+            }
+        </script>
+        <!-- Content  -->
+        <div id="content" class="detail ">
+            <!-- 비제휴점 inert_room 클래스 추가 -->
 
-				<!--
+            <!-- Top -->
+            <div class="top">
+
+                <!-- Left -->
+                <div class="left">
+
+                    <!-- Gallery (Mobile) -->
+                    <div class="gallery_m index_mobile">
+                        <div class="swiper-container swiper-default">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide">
+                                    <img src="http://localhost/images/211b0318091c6505e477fe593bd75a8e.jpg"
+                                        data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bd662fe2b.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 로비" class="swiper-lazy" />
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <img src="http://localhost/images/211b0318091c6505e477fe593bd75a8e.jpg"
+                                        data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bd71eabdf.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 슈페리어 더블" class="swiper-lazy" />
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <img src="http://localhost/images/2b12a19ac48e938186ebba217f5291d1.jpg"
+                                        data-src="http://localhost/images/2b12a19ac48e938186ebba217f5291d1.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" />
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <img src="http://localhost/images/2b12a19ac48e938186ebba217f5291d1.jpg"
+                                        data-src="http://localhost/images/2b12a19ac48e938186ebba217f5291d1.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" />
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <img src="http://localhost/images/2b12a19ac48e938186ebba217f5291d1.jpg"
+                                        data-src="http://localhost/images/2b12a19ac48e938186ebba217f5291d1.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" />
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <img src="http://localhost/images/2b12a19ac48e938186ebba217f5291d1.jpg"
+                                        data-src="http://localhost/images/2b12a19ac48e938186ebba217f5291d1.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" />
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <img src="http://localhost/images/2b12a19ac48e938186ebba217f5291d1.jpg"
+                                        data-src="http://localhost/images/2b12a19ac48e938186ebba217f5291d1.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" />
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <img src="http://localhost/images/55ada4f048ed3cabf1f67aa5f395e890.jpg"
+                                        data-src="http://localhost/images/55ada4f048ed3cabf1f67aa5f395e890.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 디럭스 패밀리 트윈" class="swiper-lazy" />
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <img src="http://localhost/images/2092d56d2e7c3795fa96101464c48926.jpg"
+                                        data-src="http://localhost/images/2092d56d2e7c3795fa96101464c48926.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" />
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <img src="http://localhost/images/2092d56d2e7c3795fa96101464c48926.jpg"
+                                        data-src="http://localhost/images/2092d56d2e7c3795fa96101464c48926.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" />
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <img src="http://localhost/images/2092d56d2e7c3795fa96101464c48926.jpg"
+                                        data-src="http://localhost/images/2092d56d2e7c3795fa96101464c48926.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" />
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <img src="http://localhost/images/2092d56d2e7c3795fa96101464c48926.jpg"
+                                        data-src="http://localhost/images/2092d56d2e7c3795fa96101464c48926.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" />
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <img src="http://localhost/images/2092d56d2e7c3795fa96101464c48926.jpg"
+                                        data-src="http://localhost/images/2092d56d2e7c3795fa96101464c48926.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" />
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <img src="http://localhost/images/211b0318091c6505e477fe593bd75a8e.jpg"
+                                        data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bdc5a1564.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 욕실" class="swiper-lazy" />
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <img src="http://localhost/images/211b0318091c6505e477fe593bd75a8e.jpg"
+                                        data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bdcae7999.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 프론트 데스크" class="swiper-lazy" />
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </li>
+                                <li class="swiper-slide">
+                                    <img src="http://localhost/images/211b0318091c6505e477fe593bd75a8e.jpg"
+                                        data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bdcfc9e39.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 전경" class="swiper-lazy" />
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                </li>
+                            </ul>
+                            <div class="spinner_slide"><span></span></div>
+                            <div class="index">
+                                <p><span></span> / <span></span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gallery (PC) -->
+                    <div class="gallery_pc">
+                        <!-- Image Size : 490 x 348 -->
+
+                        <!-- Swiper -->
+                        <div class="swiper-container gallery-top">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide"><img
+                                        data-src="http://localhost/images/211b0318091c6505e477fe593bd75a8e.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 로비" class="swiper-lazy" /></li>
+                                <li class="swiper-slide"><img
+                                        data-src="http://localhost/images/211b0318091c6505e477fe593bd75a8e.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 슈페리어 더블" class="swiper-lazy" /></li>
+                                <li class="swiper-slide"><img
+                                        data-src="http://localhost/images/2b12a19ac48e938186ebba217f5291d1.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" /></li>
+                                <li class="swiper-slide"><img
+                                        data-src="http://localhost/images/2b12a19ac48e938186ebba217f5291d1.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" /></li>
+                                <li class="swiper-slide"><img
+                                        data-src="http://localhost/images/2b12a19ac48e938186ebba217f5291d1.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" /></li>
+                                <li class="swiper-slide"><img
+                                        data-src="http://localhost/images/2b12a19ac48e938186ebba217f5291d1.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" /></li>
+                                <li class="swiper-slide"><img
+                                        data-src="http://localhost/images/2b12a19ac48e938186ebba217f5291d1.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" /></li>
+                                <li class="swiper-slide"><img
+                                        data-src="http://localhost/images/55ada4f048ed3cabf1f67aa5f395e890.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 디럭스 패밀리 트윈" class="swiper-lazy" /></li>
+                                <li class="swiper-slide"><img
+                                        data-src="http://localhost/images/2092d56d2e7c3795fa96101464c48926.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" /></li>
+                                <li class="swiper-slide"><img
+                                        data-src="http://localhost/images/2092d56d2e7c3795fa96101464c48926.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" /></li>
+                                <li class="swiper-slide"><img
+                                        data-src="http://localhost/images/2092d56d2e7c3795fa96101464c48926.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" /></li>
+                                <li class="swiper-slide"><img
+                                        data-src="http://localhost/images/2092d56d2e7c3795fa96101464c48926.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" /></li>
+                                <li class="swiper-slide"><img
+                                        data-src="http://localhost/images/2092d56d2e7c3795fa96101464c48926.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" /></li>
+                                <li class="swiper-slide"><img
+                                        data-src="http://localhost/images/211b0318091c6505e477fe593bd75a8e.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 욕실" class="swiper-lazy" /></li>
+                                <li class="swiper-slide"><img
+                                        data-src="http://localhost/images/211b0318091c6505e477fe593bd75a8e.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 프론트 데스크" class="swiper-lazy" /></li>
+                                <li class="swiper-slide"><img
+                                        data-src="http://localhost/images/211b0318091c6505e477fe593bd75a8e.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 전경" class="swiper-lazy" /></li>
+                            </ul>
+                        </div>
+                        <div class="swiper-container gallery-thumbs">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide"><img
+                                        data-src="http://localhost/images/211b0318091c6505e477fe593bd75a8e.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 로비" class="swiper-lazy" /></li>
+                                <li class="swiper-slide"><img
+                                        data-src="http://localhost/images/211b0318091c6505e477fe593bd75a8e.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 슈페리어 더블" class="swiper-lazy" /></li>
+                                <li class="swiper-slide"><img
+                                        data-src="http://localhost/images/2b12a19ac48e938186ebba217f5291d1.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" /></li>
+                                <li class="swiper-slide"><img
+                                        data-src="http://localhost/images/2b12a19ac48e938186ebba217f5291d1.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" /></li>
+                                <li class="swiper-slide"><img
+                                        data-src="http://localhost/images/2b12a19ac48e938186ebba217f5291d1.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" /></li>
+                                <li class="swiper-slide"><img
+                                        data-src="http://localhost/images/2b12a19ac48e938186ebba217f5291d1.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" /></li>
+                                <li class="swiper-slide"><img
+                                        data-src="http://localhost/images/2b12a19ac48e938186ebba217f5291d1.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" /></li>
+                                <li class="swiper-slide"><img
+                                        data-src="http://localhost/images/55ada4f048ed3cabf1f67aa5f395e890.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 디럭스 패밀리 트윈" class="swiper-lazy" /></li>
+                                <li class="swiper-slide"><img
+                                        data-src="http://localhost/images/2092d56d2e7c3795fa96101464c48926.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" /></li>
+                                <li class="swiper-slide"><img
+                                        data-src="http://localhost/images/2092d56d2e7c3795fa96101464c48926.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" /></li>
+                                <li class="swiper-slide"><img
+                                        data-src="http://localhost/images/2092d56d2e7c3795fa96101464c48926.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" /></li>
+                                <li class="swiper-slide"><img
+                                        data-src="http://localhost/images/2092d56d2e7c3795fa96101464c48926.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" /></li>
+                                <li class="swiper-slide"><img
+                                        data-src="http://localhost/images/2092d56d2e7c3795fa96101464c48926.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" /></li>
+                                <li class="swiper-slide"><img
+                                        data-src="http://localhost/images/211b0318091c6505e477fe593bd75a8e.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 욕실" class="swiper-lazy" /></li>
+                                <li class="swiper-slide"><img
+                                        data-src="http://localhost/images/211b0318091c6505e477fe593bd75a8e.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 프론트 데스크" class="swiper-lazy" /></li>
+                                <li class="swiper-slide"><img
+                                        data-src="http://localhost/images/211b0318091c6505e477fe593bd75a8e.jpg"
+                                        alt="호텔 더 디자이너스 종로 | 전경" class="swiper-lazy" /></li>
+                            </ul>
+                        </div>
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+
+                        <!-- //image.goodchoice.kr/resize_490x348/adimg_new/1491/8717/01.jpg? -->
+
+
+
+                        <!--
                                 <div class="spot">
                     <img src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bd662fe2b.jpg" alt=""/>
                 </div>
@@ -299,7 +404,7 @@
 
 
 
-				<!--
+                        <!--
                                 <div class="spot">
                     <img src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bd662fe2b.jpg" alt=""/>
                 </div>
@@ -323,80 +428,86 @@
                                         <li class="item"><img class="owl-lazy" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bdcfc9e39.jpg" alt=""/></li>
                                     </ul>
                 				-->
-            </div>
-
-			<!-- 비제휴점 사진 -->
-			<div class="inert_pic">
-				<img src="//image.goodchoice.kr/resize_490x348/adimg_new/detail_none.png" alt="" />
-			</div>
-
-        </div>
-        <!-- //Left -->
-
-		<!-- Datepicker -->
-		<input type="text" class="product_date"/>
-
-        <!-- Right -->
-        <div class="right">
-
-            <!-- Info -->
-            <div class="info">
-                <p class="badge">
-                                    </p>
-
-                <span class="build_badge" style="color: rgba(255,255,255,1); background-color: rgba(148,160,178,1);">부티크</span>
-                <h2>호텔 더 디자이너스 종로</h2>
-                                <div class="score_cnt">
-                    <span>8.5</span>
-                    만족해요                </div>
-                                <p class="address">서울 종로구 관수동 14-1</p>
-                <div class="benefit_wrap">
-                                    </div>
-            </div>
-
-            <!-- 업체 이벤트 -->
-            
-            
-                        <!-- 사장님 한마디 & 추천이유 -->
-            <div class="comment">
-                <strong>사장님 한마디</strong>
-                <button>더보기</button>
-                <div>종로3가역 도보 5분 거리에 위치해 광화문, 인사동, 청계천, 동대문 등의 서울의 주요관광지가 인접합니다<br />
-각 객실마다 아티스트가 인테리어에 참여해 위트있고 색다른 분위기를 느껴보실 수 있습니다</div>
-            </div>
                     </div>
-        <!-- //Right -->
 
-    </div>
-    <!-- //Top -->
+                    <!-- 비제휴점 사진 -->
+                    <div class="inert_pic">
+                        <img src="//image.goodchoice.kr/resize_490x348/adimg_new/detail_none.png" alt="" />
+                    </div>
 
-    <!-- Tab Menu -->
-    <div class="tab">
-        <button class="on"><span>객실안내/예약</span></button>
-        <button onclick="init_map('37.569361024496', '126.98902467024');"><span>숙소정보</span></button>
-        <button class="tab_review"><span>리뷰</span></button>
-    </div>
+                </div>
+                <!-- //Left -->
 
-    <form id="product_filter_form" method="get" action="https://www.goodchoice.kr/product/detail" data-sel_date="2020-06-15" data-sel_date2="2020-06-16">
+                <!-- Datepicker -->
+                <input type="text" class="product_date" />
 
-        
-<input id="sel_date" type="hidden" name="sel_date" value="2020-06-15" />
-        
-<input id="sel_date2" type="hidden" name="sel_date2" value="2020-06-16" />
-        
-<input id="ano" type="hidden" name="ano" value="6935" />
-        
-<input id="adcno" type="hidden" name="adcno" value="2" />
+                <!-- Right -->
+                <div class="right">
 
-        <!-- 객실안내/예약 -->
-        <article class="room_info on">
+                    <!-- Info -->
+                    <div class="info">
+                        <p class="badge">
+                        </p>
 
-            <div class="btn_date"><span class="date_view"><b></b><em>&nbsp;·&nbsp;1박</em></span><strong>변경</strong></div>
+                        <span class="build_badge"
+                            style="color: rgba(255,255,255,1); background-color: rgba(148,160,178,1);">부티크</span>
+                        <h2>호텔 더 디자이너스 종로</h2>
+                        <div class="score_cnt">
+                            <span>8.5</span>
+                            만족해요 </div>
+                        <p class="address">서울 종로구 관수동 14-1</p>
+                        <div class="benefit_wrap">
+                        </div>
+                    </div>
 
-            <!-- php -->
-                                                <div class="room">
+                    <!-- 업체 이벤트 -->
+
+
+                    <!-- 사장님 한마디 & 추천이유 -->
+                    <div class="comment">
+                        <strong>사장님 한마디</strong>
+                        <button>더보기</button>
+                        <div>종로3가역 도보 5분 거리에 위치해 광화문, 인사동, 청계천, 동대문 등의 서울의 주요관광지가 인접합니다<br />
+                            각 객실마다 아티스트가 인테리어에 참여해 위트있고 색다른 분위기를 느껴보실 수 있습니다</div>
+                    </div>
+                </div>
+                <!-- //Right -->
+
+            </div>
+            <!-- //Top -->
+
+            <!-- Tab Menu -->
+            <div class="tab">
+                <button class="on"><span>객실안내/예약</span></button>
+                <button onclick="init_map('37.569361024496', '126.98902467024');"><span>숙소정보</span></button>
+                <button class="tab_review"><span>리뷰</span></button>
+            </div>
+
+            <form id="product_filter_form" method="get" action="https://www.goodchoice.kr/product/detail"
+                data-sel_date="2020-06-15" data-sel_date2="2020-06-16">
+
+
+                <input id="sel_date" type="hidden" name="sel_date" value="2020-06-15" />
+
+                <input id="sel_date2" type="hidden" name="sel_date2" value="2020-06-16" />
+
+                <input id="ano" type="hidden" name="ano" value="6935" />
+
+                <input id="adcno" type="hidden" name="adcno" value="2" />
+
+                <!-- 객실안내/예약 -->
+                <article class="room_info on">
+
+                    <div class="btn_date"><span
+                            class="date_view"><b></b><em>&nbsp;·&nbsp;1박</em></span><strong>변경</strong></div>
+
+                    <!-- php -->
+                    <div class="room">
                         <!-- 282 x 169 -->
-                                                <p class="pic_view "><img class="lazy" data-original="//image.goodchoice.kr/resize_370x220/affiliate/2016/05/24/5743bd71eabdf.jpg" src="//image.goodchoice.kr/resize_1000X500x0/adimg_new/list_none.png" alt="호텔 더 디자이너스 종로 | 슈페리어 더블"/></p>
+                        <p class="pic_view "><img class="lazy"
+                                data-original="http://localhost/images/211b0318091c6505e477fe593bd75a8e.jpg"
+                                src="http://localhost/images/211b0318091c6505e477fe593bd75a8e.jpg"
+                                alt="호텔 더 디자이너스 종로 | 슈페리어 더블" /></p>
                         <div class="cal_bg">
                             <button type="button">닫기</button>
                         </div>
@@ -405,57 +516,70 @@
 
                         <div class="pic_wrap">
 
-							<!-- Mobile -->
+                            <!-- Mobile -->
                             <div class="gallery_m index_mobile swiper_detail">
-								<div class="swiper-container swiper-default">
-									<ul class="swiper-wrapper">
-                                                                                                                                    <li class="swiper-slide">
-                                                    <img src="//image.goodchoice.kr/images/web_v3/temp.png" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bd71eabdf.jpg" alt="호텔 더 디자이너스 종로 | 슈페리어 더블" class="swiper-lazy" />
-                                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                                                </li>
-                                                                                    									</ul>
-									<div class="spinner_slide"><span></span></div>
-									<div class="index"><p><span></span> / <span></span></p></div>
-								</div>
+                                <div class="swiper-container swiper-default">
+                                    <ul class="swiper-wrapper">
+                                        <li class="swiper-slide">
+                                            <img src="http://localhost/images/211b0318091c6505e477fe593bd75a8e.jpg"
+                                                data-src="http://localhost/images/211b0318091c6505e477fe593bd75a8e.jpg"
+                                                alt="호텔 더 디자이너스 종로 | 슈페리어 더블" class="swiper-lazy" />
+                                            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                        </li>
+                                    </ul>
+                                    <div class="spinner_slide"><span></span></div>
+                                    <div class="index">
+                                        <p><span></span> / <span></span></p>
+                                    </div>
+                                </div>
                             </div>
-                            							<!-- PC -->
+                            <!-- PC -->
                             <div class="gallery_m index_mobile">
                                 <ul class="nav owl-carousel">
-                                                                            <li class="item on"><img class="owl-lazy" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bd71eabdf.jpg" alt="호텔 더 디자이너스 종로 | 슈페리어 더블"/></li>
-                                                                    </ul>
-                                <div class="index"><p><span></span> / <span></span></p></div>
+                                    <li class="item on"><img class="owl-lazy"
+                                            data-src="http://localhost/images/211b0318091c6505e477fe593bd75a8e.jpg"
+                                            alt="호텔 더 디자이너스 종로 | 슈페리어 더블" /></li>
+                                </ul>
+                                <div class="index">
+                                    <p><span></span> / <span></span></p>
+                                </div>
                             </div>
-                                                    </div>
+                        </div>
 
                         <div class="info">
-                                                                                                                            <div class="hotel">
-                                    <div class="price">
-                                        <strong>
-                                            가격                                                                                    </strong>
-                                        <div>
-                                                                                        <p class="through_none" style="text-decoration: inherit; visibility: visible;">
-                                                남은 객실 1개                                            </p>
+                            <div class="hotel">
+                                <div class="price">
+                                    <strong>
+                                        가격 </strong>
+                                    <div>
+                                        <p class="through_none" style="text-decoration: inherit; visibility: visible;">
+                                            남은 객실 1개 </p>
 
-                                                                                                                                                <p>
-                                                                                                                                                                        <b style="color: rgba(0,0,0,1)">44,000원</b> <!-- 표시금액 -->
-                                                    </p>
-                                                                                            
-                                        </div>
+                                        <p>
+                                            <b style="color: rgba(0,0,0,1)">44,000원</b> <!-- 표시금액 -->
+                                        </p>
 
-                                                                                        <button type="button" onclick="pop_room_detail(31630);">
-                                                    객실 이용 안내
-                                                </button>
-                                                
                                     </div>
 
-                                                                        <button type="button" onclick="location.href='/reservation?adcno=2&ano=6935&armgno=31630&checkin_type=2&checkin_date=2020-06-15&checkout_date=2020-06-16&sale_price=44000';" class="gra_left_right_red" style=""> 예약</button>
+                                    <button type="button" onclick="pop_room_detail(31630);">
+                                        객실 이용 안내
+                                    </button>
+
                                 </div>
-                                                    </div>
+
+                                <button type="button"
+                                    onclick="location.href='/reservation?adcno=2&ano=6935&armgno=31630&checkin_type=2&checkin_date=2020-06-15&checkout_date=2020-06-16&sale_price=44000';"
+                                    class="gra_left_right_red" style=""> 예약</button>
+                            </div>
+                        </div>
                     </div>
 
-                                    <div class="room">
+                    <div class="room">
                         <!-- 282 x 169 -->
-                                                <p class="pic_view "><img class="lazy" data-original="//image.goodchoice.kr/resize_370x220/affiliate/2016/05/24/5743bda080236.jpg" src="//image.goodchoice.kr/resize_1000X500x0/adimg_new/list_none.png" alt="호텔 더 디자이너스 종로 | 디럭스 더블"/></p>
+                        <p class="pic_view "><img class="lazy"
+                                data-original="http://localhost/images/2b12a19ac48e938186ebba217f5291d1.jpg"
+                                src="http://localhost/images/2b12a19ac48e938186ebba217f5291d1.jpg"
+                                alt="호텔 더 디자이너스 종로 | 디럭스 더블" /></p>
                         <div class="cal_bg">
                             <button type="button">닫기</button>
                         </div>
@@ -464,77 +588,107 @@
 
                         <div class="pic_wrap">
 
-							<!-- Mobile -->
+                            <!-- Mobile -->
                             <div class="gallery_m index_mobile swiper_detail">
-								<div class="swiper-container swiper-default">
-									<ul class="swiper-wrapper">
-                                                                                                                                    <li class="swiper-slide">
-                                                    <img src="//image.goodchoice.kr/images/web_v3/temp.png" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bda080236.jpg" alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" />
-                                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                                                </li>
-                                                                                            <li class="swiper-slide">
-                                                    <img src="//image.goodchoice.kr/images/web_v3/temp.png" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bd8b03bc8.jpg" alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" />
-                                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                                                </li>
-                                                                                            <li class="swiper-slide">
-                                                    <img src="//image.goodchoice.kr/images/web_v3/temp.png" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bd7b49ba9.jpg" alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" />
-                                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                                                </li>
-                                                                                            <li class="swiper-slide">
-                                                    <img src="//image.goodchoice.kr/images/web_v3/temp.png" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bd9263c01.jpg" alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" />
-                                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                                                </li>
-                                                                                            <li class="swiper-slide">
-                                                    <img src="//image.goodchoice.kr/images/web_v3/temp.png" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bd83dc346.jpg" alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" />
-                                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                                                </li>
-                                                                                    									</ul>
-									<div class="spinner_slide"><span></span></div>
-									<div class="index"><p><span></span> / <span></span></p></div>
-								</div>
+                                <div class="swiper-container swiper-default">
+                                    <ul class="swiper-wrapper">
+                                        <li class="swiper-slide">
+                                            <img src="http://localhost/images/2b12a19ac48e938186ebba217f5291d1.jpg"
+                                                data-src="http://localhost/images/2b12a19ac48e938186ebba217f5291d1.jpg"
+                                                alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" />
+                                            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <img src="http://localhost/images/2b12a19ac48e938186ebba217f5291d1.jpg"
+                                                data-src="http://localhost/images/2b12a19ac48e938186ebba217f5291d1.jpg"
+                                                alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" />
+                                            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <img src="http://localhost/images/2b12a19ac48e938186ebba217f5291d1.jpg"
+                                                data-src="http://localhost/images/2b12a19ac48e938186ebba217f5291d1.jpg"
+                                                alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" />
+                                            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <img src="http://localhost/images/2b12a19ac48e938186ebba217f5291d1.jpg"
+                                                data-src="http://localhost/images/2b12a19ac48e938186ebba217f5291d1.jpg"
+                                                alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" />
+                                            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <img src="http://localhost/images/2b12a19ac48e938186ebba217f5291d1.jpg"
+                                                data-src="http://localhost/images/2b12a19ac48e938186ebba217f5291d1.jpg"
+                                                alt="호텔 더 디자이너스 종로 | 디럭스 더블" class="swiper-lazy" />
+                                            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                        </li>
+                                    </ul>
+                                    <div class="spinner_slide"><span></span></div>
+                                    <div class="index">
+                                        <p><span></span> / <span></span></p>
+                                    </div>
+                                </div>
                             </div>
-                            							<!-- PC -->
+                            <!-- PC -->
                             <div class="gallery_m index_mobile">
                                 <ul class="nav owl-carousel">
-                                                                            <li class="item on"><img class="owl-lazy" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bda080236.jpg" alt="호텔 더 디자이너스 종로 | 디럭스 더블"/></li>
-                                                                            <li class="item on"><img class="owl-lazy" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bd8b03bc8.jpg" alt="호텔 더 디자이너스 종로 | 디럭스 더블"/></li>
-                                                                            <li class="item on"><img class="owl-lazy" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bd7b49ba9.jpg" alt="호텔 더 디자이너스 종로 | 디럭스 더블"/></li>
-                                                                            <li class="item on"><img class="owl-lazy" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bd9263c01.jpg" alt="호텔 더 디자이너스 종로 | 디럭스 더블"/></li>
-                                                                            <li class="item on"><img class="owl-lazy" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bd83dc346.jpg" alt="호텔 더 디자이너스 종로 | 디럭스 더블"/></li>
-                                                                    </ul>
-                                <div class="index"><p><span></span> / <span></span></p></div>
+                                    <li class="item on"><img class="owl-lazy"
+                                            data-src="http://localhost/images/2b12a19ac48e938186ebba217f5291d1.jpg"
+                                            alt="호텔 더 디자이너스 종로 | 디럭스 더블" /></li>
+                                    <li class="item on"><img class="owl-lazy"
+                                            data-src="http://localhost/images/2b12a19ac48e938186ebba217f5291d1.jpg"
+                                            alt="호텔 더 디자이너스 종로 | 디럭스 더블" /></li>
+                                    <li class="item on"><img class="owl-lazy"
+                                            data-src="http://localhost/images/2b12a19ac48e938186ebba217f5291d1.jpg"
+                                            alt="호텔 더 디자이너스 종로 | 디럭스 더블" /></li>
+                                    <li class="item on"><img class="owl-lazy"
+                                            data-src="http://localhost/images/2b12a19ac48e938186ebba217f5291d1.jpg"
+                                            alt="호텔 더 디자이너스 종로 | 디럭스 더블" /></li>
+                                    <li class="item on"><img class="owl-lazy"
+                                            data-src="http://localhost/images/2b12a19ac48e938186ebba217f5291d1.jpg"
+                                            alt="호텔 더 디자이너스 종로 | 디럭스 더블" /></li>
+                                </ul>
+                                <div class="index">
+                                    <p><span></span> / <span></span></p>
+                                </div>
                             </div>
-                                                    </div>
+                        </div>
 
                         <div class="info">
-                                                                                                                            <div class="hotel">
-                                    <div class="price">
-                                        <strong>
-                                            가격                                                                                    </strong>
-                                        <div>
-                                                                                        <p class="through_none" style="text-decoration: line-through; visibility: visible;">
-                                                242,000                                            </p>
+                            <div class="hotel">
+                                <div class="price">
+                                    <strong>
+                                        가격 </strong>
+                                    <div>
+                                        <p class="through_none"
+                                            style="text-decoration: line-through; visibility: visible;">
+                                            242,000 </p>
 
-                                                                                                                                                <p>
-                                                                                                                                                                        <b style="color: rgba(0,0,0,1)">55,000원</b> <!-- 표시금액 -->
-                                                    </p>
-                                                                                            
-                                        </div>
+                                        <p>
+                                            <b style="color: rgba(0,0,0,1)">55,000원</b> <!-- 표시금액 -->
+                                        </p>
 
-                                                                                        <button type="button" onclick="pop_room_detail(31631);">
-                                                    객실 이용 안내
-                                                </button>
-                                                
                                     </div>
 
-                                                                        <button type="button" onclick="location.href='/reservation?adcno=2&ano=6935&armgno=31631&checkin_type=2&checkin_date=2020-06-15&checkout_date=2020-06-16&sale_price=55000';" class="gra_left_right_red" style=""> 예약</button>
+                                    <button type="button" onclick="pop_room_detail(31631);">
+                                        객실 이용 안내
+                                    </button>
+
                                 </div>
-                                                    </div>
+
+                                <button type="button"
+                                    onclick="location.href='/reservation?adcno=2&ano=6935&armgno=31631&checkin_type=2&checkin_date=2020-06-15&checkout_date=2020-06-16&sale_price=55000';"
+                                    class="gra_left_right_red" style=""> 예약</button>
+                            </div>
+                        </div>
                     </div>
 
-                                    <div class="room">
+                    <div class="room">
                         <!-- 282 x 169 -->
-                                                <p class="pic_view "><img class="lazy" data-original="//image.goodchoice.kr/resize_370x220/affiliate/2018/05/03/5aeac9433fdac.jpg" src="//image.goodchoice.kr/resize_1000X500x0/adimg_new/list_none.png" alt="호텔 더 디자이너스 종로 | 디럭스 패밀리 트윈"/></p>
+                        <p class="pic_view "><img class="lazy"
+                                data-original="http://localhost/images/55ada4f048ed3cabf1f67aa5f395e890.jpg"
+                                src="http://localhost/images/55ada4f048ed3cabf1f67aa5f395e890.jpg"
+                                alt="호텔 더 디자이너스 종로 | 디럭스 패밀리 트윈" /></p>
                         <div class="cal_bg">
                             <button type="button">닫기</button>
                         </div>
@@ -543,57 +697,70 @@
 
                         <div class="pic_wrap">
 
-							<!-- Mobile -->
+                            <!-- Mobile -->
                             <div class="gallery_m index_mobile swiper_detail">
-								<div class="swiper-container swiper-default">
-									<ul class="swiper-wrapper">
-                                                                                                                                    <li class="swiper-slide">
-                                                    <img src="//image.goodchoice.kr/images/web_v3/temp.png" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2018/05/03/5aeac9433fdac.jpg" alt="호텔 더 디자이너스 종로 | 디럭스 패밀리 트윈" class="swiper-lazy" />
-                                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                                                </li>
-                                                                                    									</ul>
-									<div class="spinner_slide"><span></span></div>
-									<div class="index"><p><span></span> / <span></span></p></div>
-								</div>
+                                <div class="swiper-container swiper-default">
+                                    <ul class="swiper-wrapper">
+                                        <li class="swiper-slide">
+                                            <img src="http://localhost/images/55ada4f048ed3cabf1f67aa5f395e890.jpg"
+                                                data-src="http://localhost/images/55ada4f048ed3cabf1f67aa5f395e890.jpg"
+                                                alt="호텔 더 디자이너스 종로 | 디럭스 패밀리 트윈" class="swiper-lazy" />
+                                            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                        </li>
+                                    </ul>
+                                    <div class="spinner_slide"><span></span></div>
+                                    <div class="index">
+                                        <p><span></span> / <span></span></p>
+                                    </div>
+                                </div>
                             </div>
-                            							<!-- PC -->
+                            <!-- PC -->
                             <div class="gallery_m index_mobile">
                                 <ul class="nav owl-carousel">
-                                                                            <li class="item on"><img class="owl-lazy" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2018/05/03/5aeac9433fdac.jpg" alt="호텔 더 디자이너스 종로 | 디럭스 패밀리 트윈"/></li>
-                                                                    </ul>
-                                <div class="index"><p><span></span> / <span></span></p></div>
+                                    <li class="item on"><img class="owl-lazy"
+                                            data-src="http://localhost/images/55ada4f048ed3cabf1f67aa5f395e890.jpg"
+                                            alt="호텔 더 디자이너스 종로 | 디럭스 패밀리 트윈" /></li>
+                                </ul>
+                                <div class="index">
+                                    <p><span></span> / <span></span></p>
+                                </div>
                             </div>
-                                                    </div>
+                        </div>
 
                         <div class="info">
-                                                                                                                            <div class="hotel">
-                                    <div class="price">
-                                        <strong>
-                                            가격                                                                                    </strong>
-                                        <div>
-                                                                                        <p class="through_none" style="text-decoration: inherit; visibility: visible;">
-                                                남은 객실 1개                                            </p>
+                            <div class="hotel">
+                                <div class="price">
+                                    <strong>
+                                        가격 </strong>
+                                    <div>
+                                        <p class="through_none" style="text-decoration: inherit; visibility: visible;">
+                                            남은 객실 1개 </p>
 
-                                                                                                                                                <p>
-                                                                                                                                                                        <b style="color: rgba(0,0,0,1)">55,000원</b> <!-- 표시금액 -->
-                                                    </p>
-                                                                                            
-                                        </div>
+                                        <p>
+                                            <b style="color: rgba(0,0,0,1)">55,000원</b> <!-- 표시금액 -->
+                                        </p>
 
-                                                                                        <button type="button" onclick="pop_room_detail(31632);">
-                                                    객실 이용 안내
-                                                </button>
-                                                
                                     </div>
 
-                                                                        <button type="button" onclick="location.href='/reservation?adcno=2&ano=6935&armgno=31632&checkin_type=2&checkin_date=2020-06-15&checkout_date=2020-06-16&sale_price=55000';" class="gra_left_right_red" style=""> 예약</button>
+                                    <button type="button" onclick="pop_room_detail(31632);">
+                                        객실 이용 안내
+                                    </button>
+
                                 </div>
-                                                    </div>
+
+                                <button type="button"
+                                    onclick="location.href='/reservation?adcno=2&ano=6935&armgno=31632&checkin_type=2&checkin_date=2020-06-15&checkout_date=2020-06-16&sale_price=55000';"
+                                    class="gra_left_right_red" style=""> 예약</button>
+                            </div>
+                        </div>
                     </div>
 
-                                    <div class="room">
+                    <div class="room">
                         <!-- 282 x 169 -->
-                                                <p class="pic_view "><img class="lazy" data-original="//image.goodchoice.kr/resize_370x220/affiliate/2016/05/24/5743bda75f4ca.jpg" src="//image.goodchoice.kr/resize_1000X500x0/adimg_new/list_none.png" alt="호텔 더 디자이너스 종로 | 스위트 더블"/></p>
+                        <p class="pic_view "><img class="lazy"
+                                data-original="http://localhost/images/2092d56d2e7c3795fa96101464c48926.jpg"
+                                src="http://localhost/images/2092d56d2e7c3795fa96101464c48926.jpg"
+                                alt="호텔 더 디자이너스 종로 | 스위트 더블" /></p>
                         <div class="cal_bg">
                             <button type="button">닫기</button>
                         </div>
@@ -602,188 +769,242 @@
 
                         <div class="pic_wrap">
 
-							<!-- Mobile -->
+                            <!-- Mobile -->
                             <div class="gallery_m index_mobile swiper_detail">
-								<div class="swiper-container swiper-default">
-									<ul class="swiper-wrapper">
-                                                                                                                                    <li class="swiper-slide">
-                                                    <img src="//image.goodchoice.kr/images/web_v3/temp.png" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bda75f4ca.jpg" alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" />
-                                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                                                </li>
-                                                                                            <li class="swiper-slide">
-                                                    <img src="//image.goodchoice.kr/images/web_v3/temp.png" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bdb33d4a2.jpg" alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" />
-                                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                                                </li>
-                                                                                            <li class="swiper-slide">
-                                                    <img src="//image.goodchoice.kr/images/web_v3/temp.png" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bdad2c913.jpg" alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" />
-                                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                                                </li>
-                                                                                            <li class="swiper-slide">
-                                                    <img src="//image.goodchoice.kr/images/web_v3/temp.png" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bdbe1a695.jpg" alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" />
-                                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                                                </li>
-                                                                                            <li class="swiper-slide">
-                                                    <img src="//image.goodchoice.kr/images/web_v3/temp.png" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bdb8d685b.jpg" alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" />
-                                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                                                </li>
-                                                                                    									</ul>
-									<div class="spinner_slide"><span></span></div>
-									<div class="index"><p><span></span> / <span></span></p></div>
-								</div>
+                                <div class="swiper-container swiper-default">
+                                    <ul class="swiper-wrapper">
+                                        <li class="swiper-slide">
+                                            <img src="http://localhost/images/2092d56d2e7c3795fa96101464c48926.jpg"
+                                                data-src="http://localhost/images/2092d56d2e7c3795fa96101464c48926.jpg"
+                                                alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" />
+                                            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <img src="http://localhost/images/2092d56d2e7c3795fa96101464c48926.jpg"
+                                                data-src="http://localhost/images/2092d56d2e7c3795fa96101464c48926.jpg"
+                                                alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" />
+                                            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <img src="http://localhost/images/2092d56d2e7c3795fa96101464c48926.jpg"
+                                                data-src="http://localhost/images/2092d56d2e7c3795fa96101464c48926.jpg"
+                                                alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" />
+                                            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <img src="http://localhost/images/2092d56d2e7c3795fa96101464c48926.jpg"
+                                                data-src="http://localhost/images/2092d56d2e7c3795fa96101464c48926.jpg"
+                                                alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" />
+                                            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <img src="http://localhost/images/2092d56d2e7c3795fa96101464c48926.jpg"
+                                                data-src="http://localhost/images/2092d56d2e7c3795fa96101464c48926.jpg"
+                                                alt="호텔 더 디자이너스 종로 | 스위트 더블" class="swiper-lazy" />
+                                            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                                        </li>
+                                    </ul>
+                                    <div class="spinner_slide"><span></span></div>
+                                    <div class="index">
+                                        <p><span></span> / <span></span></p>
+                                    </div>
+                                </div>
                             </div>
-                            							<!-- PC -->
+                            <!-- PC -->
                             <div class="gallery_m index_mobile">
                                 <ul class="nav owl-carousel">
-                                                                            <li class="item on"><img class="owl-lazy" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bda75f4ca.jpg" alt="호텔 더 디자이너스 종로 | 스위트 더블"/></li>
-                                                                            <li class="item on"><img class="owl-lazy" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bdb33d4a2.jpg" alt="호텔 더 디자이너스 종로 | 스위트 더블"/></li>
-                                                                            <li class="item on"><img class="owl-lazy" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bdad2c913.jpg" alt="호텔 더 디자이너스 종로 | 스위트 더블"/></li>
-                                                                            <li class="item on"><img class="owl-lazy" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bdbe1a695.jpg" alt="호텔 더 디자이너스 종로 | 스위트 더블"/></li>
-                                                                            <li class="item on"><img class="owl-lazy" data-src="//image.goodchoice.kr/resize_490x348/affiliate/2016/05/24/5743bdb8d685b.jpg" alt="호텔 더 디자이너스 종로 | 스위트 더블"/></li>
-                                                                    </ul>
-                                <div class="index"><p><span></span> / <span></span></p></div>
+                                    <li class="item on"><img class="owl-lazy"
+                                            data-src="http://localhost/images/2092d56d2e7c3795fa96101464c48926.jpg"
+                                            alt="호텔 더 디자이너스 종로 | 스위트 더블" /></li>
+                                    <li class="item on"><img class="owl-lazy"
+                                            data-src="http://localhost/images/2092d56d2e7c3795fa96101464c48926.jpg"
+                                            alt="호텔 더 디자이너스 종로 | 스위트 더블" /></li>
+                                    <li class="item on"><img class="owl-lazy"
+                                            data-src="http://localhost/images/2092d56d2e7c3795fa96101464c48926.jpg"
+                                            alt="호텔 더 디자이너스 종로 | 스위트 더블" /></li>
+                                    <li class="item on"><img class="owl-lazy"
+                                            data-src="http://localhost/images/2092d56d2e7c3795fa96101464c48926.jpg"
+                                            alt="호텔 더 디자이너스 종로 | 스위트 더블" /></li>
+                                    <li class="item on"><img class="owl-lazy"
+                                            data-src="http://localhost/images/2092d56d2e7c3795fa96101464c48926.jpg"
+                                            alt="호텔 더 디자이너스 종로 | 스위트 더블" /></li>
+                                </ul>
+                                <div class="index">
+                                    <p><span></span> / <span></span></p>
+                                </div>
                             </div>
-                                                    </div>
+                        </div>
 
                         <div class="info">
-                                                                                                                            <div class="hotel">
-                                    <div class="price">
-                                        <strong>
-                                            가격                                                                                    </strong>
-                                        <div>
-                                                                                        <p class="through_none" style="text-decoration: inherit; visibility: visible;">
-                                                남은 객실 1개                                            </p>
+                            <div class="hotel">
+                                <div class="price">
+                                    <strong>
+                                        가격 </strong>
+                                    <div>
+                                        <p class="through_none" style="text-decoration: inherit; visibility: visible;">
+                                            남은 객실 1개 </p>
 
-                                                                                                                                                <p>
-                                                                                                                                                                        <b style="color: rgba(0,0,0,1)">66,000원</b> <!-- 표시금액 -->
-                                                    </p>
-                                                                                            
-                                        </div>
+                                        <p>
+                                            <b style="color: rgba(0,0,0,1)">66,000원</b> <!-- 표시금액 -->
+                                        </p>
 
-                                                                                        <button type="button" onclick="pop_room_detail(31633);">
-                                                    객실 이용 안내
-                                                </button>
-                                                
                                     </div>
 
-                                                                        <button type="button" onclick="location.href='/reservation?adcno=2&ano=6935&armgno=31633&checkin_type=2&checkin_date=2020-06-15&checkout_date=2020-06-16&sale_price=66000';" class="gra_left_right_red" style=""> 예약</button>
+                                    <button type="button" onclick="pop_room_detail(31633);">
+                                        객실 이용 안내
+                                    </button>
+
                                 </div>
-                                                    </div>
+
+                                <button type="button"
+                                    onclick="location.href='/reservation?adcno=2&ano=6935&armgno=31633&checkin_type=2&checkin_date=2020-06-15&checkout_date=2020-06-16&sale_price=66000';"
+                                    class="gra_left_right_red" style=""> 예약</button>
+                            </div>
+                        </div>
                     </div>
 
-                                        <!-- php -->
+                    <!-- php -->
 
-        </article>
-        <!-- //객실안내/예약 -->
-    </form>
+                </article>
+                <!-- //객실안내/예약 -->
+            </form>
 
-    <!-- 예약 경고 -->
-    
+            <!-- 예약 경고 -->
 
-    <!-- 숙소정보 -->
-    <article class="detail_info">
-        <!-- 기본 정보 -->
-        <button type="button" id="default_info_tab" class="category"><span>기본 정보</span></button>
-        <section class="default_info">
 
-                            <!-- 사장님 한마디 & 추천이유 -->
-                <div class="comment_mobile">
-                    <h3>사장님 한마디</h3>
-                    종로3가역 도보 5분 거리에 위치해 광화문, 인사동, 청계천, 동대문 등의 서울의 주요관광지가 인접합니다<br />
-각 객실마다 아티스트가 인테리어에 참여해 위트있고 색다른 분위기를 느껴보실 수 있습니다                </div>
-            
-            
-<h3>주변정보</h3>
-<ul>
-<li>종로3가역 도보 5분</li><li>보신각 도보 9분</li><li>종묘 도보 10분</li></ul>
+            <!-- 숙소정보 -->
+            <article class="detail_info">
+                <!-- 기본 정보 -->
+                <button type="button" id="default_info_tab" class="category"><span>기본 정보</span></button>
+                <section class="default_info">
 
-<h3>기본 정보</h3>
-<ul>
-<li>체크인 : 15:00 | 체크아웃 : 12:00</li><li>무료 Wi-Fi </li><li>전 객실 금연 </li><li>기본 Bath Amenity 구비</li><li>주차가능 (무료 / 객실당 1대)</li></ul>
+                    <!-- 사장님 한마디 & 추천이유 -->
+                    <div class="comment_mobile">
+                        <h3>사장님 한마디</h3>
+                        종로3가역 도보 5분 거리에 위치해 광화문, 인사동, 청계천, 동대문 등의 서울의 주요관광지가 인접합니다<br />
+                        각 객실마다 아티스트가 인테리어에 참여해 위트있고 색다른 분위기를 느껴보실 수 있습니다
+                    </div>
 
-<h3>인원 추가 정보</h3>
-<ul>
-<li><b><font color="#CA0101">전 객실 인원추가 불가</font></b></li></ul>
 
-<h3>취사 시설</h3>
-<ul>
-<li>전 객실 취사 불가</li></ul>
+                    <h3>주변정보</h3>
+                    <ul>
+                        <li>종로3가역 도보 5분</li>
+                        <li>보신각 도보 9분</li>
+                        <li>종묘 도보 10분</li>
+                    </ul>
 
-<h3>취소 및 환불 규정</h3>
-<ul>
-<li>체크인일 기준 3일전 17시까지 : 100% 환불</li><li>체크인일 기준 3일전 17시이후~당일 및 No-show : 환불불가</li><li>취소, 환불시 수수료가 발생할 수 있습니다</li></ul>
+                    <h3>기본 정보</h3>
+                    <ul>
+                        <li>체크인 : 15:00 | 체크아웃 : 12:00</li>
+                        <li>무료 Wi-Fi </li>
+                        <li>전 객실 금연 </li>
+                        <li>기본 Bath Amenity 구비</li>
+                        <li>주차가능 (무료 / 객실당 1대)</li>
+                    </ul>
 
-<h3>확인사항 및 기타</h3>
-<ul>
-<li>최대인원 초과시 입실 불가합니다</li><li>위의 정보는 호텔의 사정에 따라 변경될 수 있습니다</li><li>성수기 기간동안 일부 객실의 경우 요금변동이 있을 수 있습니다</li><li>해당 이미지는 실제와 상이 할 수 있습니다</li><li>체크인 시 배정 또는 베드타입 미기재 상품은 특정객실과 베드타입을 보장하지 않습니다</li><li>해당 객실가는 세금, 봉사료가 포함된 금액입니다</li><li>미성년자는 보호자 동반없이 이용하실 수 없습니다</li></ul>
-            <div class="map" id="google_maps"></div>
-        </section>
+                    <h3>인원 추가 정보</h3>
+                    <ul>
+                        <li><b>
+                                <font color="#CA0101">전 객실 인원추가 불가</font>
+                            </b></li>
+                    </ul>
+
+                    <h3>취사 시설</h3>
+                    <ul>
+                        <li>전 객실 취사 불가</li>
+                    </ul>
+
+                    <h3>취소 및 환불 규정</h3>
+                    <ul>
+                        <li>체크인일 기준 3일전 17시까지 : 100% 환불</li>
+                        <li>체크인일 기준 3일전 17시이후~당일 및 No-show : 환불불가</li>
+                        <li>취소, 환불시 수수료가 발생할 수 있습니다</li>
+                    </ul>
+
+                    <h3>확인사항 및 기타</h3>
+                    <ul>
+                        <li>최대인원 초과시 입실 불가합니다</li>
+                        <li>위의 정보는 호텔의 사정에 따라 변경될 수 있습니다</li>
+                        <li>성수기 기간동안 일부 객실의 경우 요금변동이 있을 수 있습니다</li>
+                        <li>해당 이미지는 실제와 상이 할 수 있습니다</li>
+                        <li>체크인 시 배정 또는 베드타입 미기재 상품은 특정객실과 베드타입을 보장하지 않습니다</li>
+                        <li>해당 객실가는 세금, 봉사료가 포함된 금액입니다</li>
+                        <li>미성년자는 보호자 동반없이 이용하실 수 없습니다</li>
+                    </ul>
+                    <div class="map" id="google_maps"></div>
+                </section>
 
                 <!-- 편의시설 및 서비스 -->
-        <button type="button" class="category"><span>편의시설 및 서비스</span></button>
-        <section class="service">
-            <ul class="theme_wrap">
-                <li class="theme_47">와이파이</li><li class="theme_49">욕실용품</li><li class="theme_134">금연</li><li class="theme_200">객실샤워실</li>            </ul>
-                    </section>
+                <button type="button" class="category"><span>편의시설 및 서비스</span></button>
+                <section class="service">
+                    <ul class="theme_wrap">
+                        <li class="theme_47">와이파이</li>
+                        <li class="theme_49">욕실용품</li>
+                        <li class="theme_134">금연</li>
+                        <li class="theme_200">객실샤워실</li>
+                    </ul>
+                </section>
 
             </article>
-    <!-- //숙소정보 -->
+            <!-- //숙소정보 -->
 
-    <!-- 리뷰 -->
-    <article class="review" id="review">
-        <div class="score_top" v-if="count > 0">
-            <strong>{{rate_textinfo}}</strong>
-            <div class="score_wrap">
-                <!-- star_00 부터 5단위로 star_50 까지 반응형2.0과 같은구조 -->
-                <div :class="'score_star star_'+ score_star"></div>
-                <div class="num">{{rateavg}}</div>
-            </div>
-            <p v-if="ownercommcnt">
-                전체 리뷰 <b>{{count}}</b>
-                <span>|</span>
-				제휴점 답변 <b>{{ownercommcnt}}</b>
-            </p>
-			<p v-else>
-				전체 리뷰 <b>{{count}}</b>
-			</p>
-        </div>
+            <!-- 리뷰 -->
+            <article class="review" id="review">
+                <div class="score_top" v-if="count > 0">
+                    <strong>{{rate_textinfo}}</strong>
+                    <div class="score_wrap">
+                        <!-- star_00 부터 5단위로 star_50 까지 반응형2.0과 같은구조 -->
+                        <div :class="'score_star star_'+ score_star"></div>
+                        <div class="num">{{rateavg}}</div>
+                    </div>
+                    <p v-if="ownercommcnt">
+                        전체 리뷰 <b>{{count}}</b>
+                        <span>|</span>
+                        제휴점 답변 <b>{{ownercommcnt}}</b>
+                    </p>
+                    <p v-else>
+                        전체 리뷰 <b>{{count}}</b>
+                    </p>
+                </div>
 
-        <ul>
-            <template v-for="item in items">
-                <li>
-                    <div class="guest">
-                        <!-- 유저 사진있으면 노출해주고 없을시 랜덤으로
+                <ul>
+                    <template v-for="item in items">
+                        <li>
+                            <div class="guest">
+                                <!-- 유저 사진있으면 노출해주고 없을시 랜덤으로
                         ico_01 ~ ico_05 에서 뿌려줌 -->
-                        <p class="pic">
-                            <img :src="'//image.goodchoice.kr'+ item.upath" :alt="item.unick"/>
-                        </p>
-                        <strong>{{item.epilrate_textinfo}}</strong>
-                        <div class="score_wrap_sm">
-                            <div :class="'score_star star_'+ get_score_star(item.epilrate)"></div>
-                            <div class="num">{{float_zero(item.epilrate)}}</div>
-                        </div>
-                        <div class="name" v-if="item.aerealstate == 'R'">
-                            <b>{{item.armgname}} · </b>{{item.unick}}
-                        </div>
-                        <div class="name" v-else>
-                            {{item.unick}}
-                        </div>
-                        <div class="txt" v-html="item.aepcont.replace(/\n/g, '<br />')"></div>
-                        <div class="gallery_re" v-if="getCount(item.aepimg) > 0">
+                                <p class="pic">
+                                    <img :src="'//image.goodchoice.kr'+ item.upath" :alt="item.unick" />
+                                </p>
+                                <strong>{{item.epilrate_textinfo}}</strong>
+                                <div class="score_wrap_sm">
+                                    <div :class="'score_star star_'+ get_score_star(item.epilrate)"></div>
+                                    <div class="num">{{float_zero(item.epilrate)}}</div>
+                                </div>
+                                <div class="name" v-if="item.aerealstate == 'R'">
+                                    <b>{{item.armgname}} · </b>{{item.unick}}
+                                </div>
+                                <div class="name" v-else>
+                                    {{item.unick}}
+                                </div>
+                                <div class="txt" v-html="item.aepcont.replace(/\n/g, '<br />')"></div>
+                                <div class="gallery_re" v-if="getCount(item.aepimg) > 0">
 
 
-							<div class="swiper-container swiper-type-3">
-								<ul class="swiper-wrapper">
-	                                <template v-for="aepimg in item.aepimg">
-										<li class="swiper-slide">
-											<img :src="'//image.goodchoice.kr'+ aepimg.aep_imgpath"  :alt="item.epilrate_textinfo" />
-										</li>
-	                                </template>
-								</ul>
-								<div class="swiper-button-next"></div>
-								<div class="swiper-button-prev"></div>
-							</div>
+                                    <div class="swiper-container swiper-type-3">
+                                        <ul class="swiper-wrapper">
+                                            <template v-for="aepimg in item.aepimg">
+                                                <li class="swiper-slide">
+                                                    <img :src="'//image.goodchoice.kr'+ aepimg.aep_imgpath"
+                                                        :alt="item.epilrate_textinfo" />
+                                                </li>
+                                            </template>
+                                        </ul>
+                                        <div class="swiper-button-next"></div>
+                                        <div class="swiper-button-prev"></div>
+                                    </div>
 
-							<!--
+                                    <!--
 							<ul class="nav owl-carousel">
                                 <template v-for="aepimg in item.aepimg">
                                     <li class="item">
@@ -793,59 +1014,59 @@
                             </ul>
 							-->
 
-                        </div>
-                        <span class="date" >{{get_date_diff(item.aepreg, '전')}}</span>
-                    </div>
-                    <template v-for="o_comm in item.o_comm">
-                    <div class="boss">
-                        <p class="pic">
-                            <img :src="'//image.goodchoice.kr'+ o_comm.upath" :alt="o_comm.unick"/>
-                        </p>
-                        <strong>{{o_comm.unick}}</strong>
-                        <div class="txt" v-html="o_comm.aep_cmcont.replace(/\n/g, '<br />')"></div>
-                        <span class="date" >{{get_date_diff(o_comm.aep_cmreg, '전')}}</span>
-                    </div>
+                                </div>
+                                <span class="date">{{get_date_diff(item.aepreg, '전')}}</span>
+                            </div>
+                            <template v-for="o_comm in item.o_comm">
+                                <div class="boss">
+                                    <p class="pic">
+                                        <img :src="'//image.goodchoice.kr'+ o_comm.upath" :alt="o_comm.unick" />
+                                    </p>
+                                    <strong>{{o_comm.unick}}</strong>
+                                    <div class="txt" v-html="o_comm.aep_cmcont.replace(/\n/g, '<br />')"></div>
+                                    <span class="date">{{get_date_diff(o_comm.aep_cmreg, '전')}}</span>
+                                </div>
+                            </template>
+                        </li>
                     </template>
-                </li>
-            </template>
-        </ul>
+                </ul>
 
-        <div id="pagination">
-            <my-pagination></my-pagination>
+                <div id="pagination">
+                    <my-pagination></my-pagination>
+                </div>
+            </article>
+            <!-- //리뷰 -->
+
         </div>
-    </article>
-    <!-- //리뷰 -->
+        <!-- //Content  -->
 
-</div>
-<!-- //Content  -->
-
-<!-- #1 팝업 - 멤버쉽 혜택 pop_mem(); -->
-<div class="layer pop_full pop_mem">
-    <div class="fix_title">
-        진행중인 이벤트
-        <button onclick="close_layer();">닫기</button>
-    </div>
-    <div class="iscroll_cp">
-        <div class="scroller">
-                    </div>
-    </div>
-</div>
-
-<!-- #2 팝업 - 이벤트(호텔) pop_evt();  -->
-<div class="layer pop_full pop_evt">
-    <div class="fix_title">
-        진행중인 이벤트
-        <button onclick="close_layer();">닫기</button>
-    </div>
-    <div class="iscroll_cp">
-        <div class="scroller">
-
-            
+        <!-- #1 팝업 - 멤버쉽 혜택 pop_mem(); -->
+        <div class="layer pop_full pop_mem">
+            <div class="fix_title">
+                진행중인 이벤트
+                <button onclick="close_layer();">닫기</button>
+            </div>
+            <div class="iscroll_cp">
+                <div class="scroller">
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
-<!-- #3 팝업 - 객실 이용 안내 pop_useinfo();
+        <!-- #2 팝업 - 이벤트(호텔) pop_evt();  -->
+        <div class="layer pop_full pop_evt">
+            <div class="fix_title">
+                진행중인 이벤트
+                <button onclick="close_layer();">닫기</button>
+            </div>
+            <div class="iscroll_cp">
+                <div class="scroller">
+
+
+                </div>
+            </div>
+        </div>
+
+        <!-- #3 팝업 - 객실 이용 안내 pop_useinfo();
 <div class="layer pop_full pop_useinfo">
     <div class="fix_title">
         이벤트
@@ -881,206 +1102,215 @@
     </div>
 </div> -->
 
-<!-- 팝업 객실 상세 -->
-<div class="layer pop_full pop_useinfo" data-room-detail="31630">
-    <div class="fix_title">객실 이용 안내<button onclick="close_layer();">닫기</button></div>
-    <div class="iscroll_cp scroll_31630">
-        <div class="scroller">
-                                <section>
+        <!-- 팝업 객실 상세 -->
+        <div class="layer pop_full pop_useinfo" data-room-detail="31630">
+            <div class="fix_title">객실 이용 안내<button onclick="close_layer();">닫기</button></div>
+            <div class="iscroll_cp scroll_31630">
+                <div class="scroller">
+                    <section>
                         <strong>기본정보</strong>
                         <ul class="dot_txt">
-                                                            <li>2인 기준 최대 2인 </li>
-                                                            <li>더블배드 1개</li>
-                                                    </ul>
+                            <li>2인 기준 최대 2인 </li>
+                            <li>더블배드 1개</li>
+                        </ul>
                     </section>
-                                    <section>
+                    <section>
                         <strong>선택 날짜</strong>
                         <ul class="dot_txt">
-                                                            <li>06월 15일 ~ 06월 16일</li>
-                                                    </ul>
+                            <li>06월 15일 ~ 06월 16일</li>
+                        </ul>
                     </section>
-                        </div>
-    </div>
-</div>
-<div class="layer pop_full pop_useinfo" data-room-detail="31631">
-    <div class="fix_title">객실 이용 안내<button onclick="close_layer();">닫기</button></div>
-    <div class="iscroll_cp scroll_31631">
-        <div class="scroller">
-                                <section>
+                </div>
+            </div>
+        </div>
+        <div class="layer pop_full pop_useinfo" data-room-detail="31631">
+            <div class="fix_title">객실 이용 안내<button onclick="close_layer();">닫기</button></div>
+            <div class="iscroll_cp scroll_31631">
+                <div class="scroller">
+                    <section>
                         <strong>기본정보</strong>
                         <ul class="dot_txt">
-                                                            <li>2인 기준 최대 2인 </li>
-                                                            <li>더블배드 1개</li>
-                                                    </ul>
+                            <li>2인 기준 최대 2인 </li>
+                            <li>더블배드 1개</li>
+                        </ul>
                     </section>
-                                    <section>
+                    <section>
                         <strong>선택 날짜</strong>
                         <ul class="dot_txt">
-                                                            <li>06월 15일 ~ 06월 16일</li>
-                                                    </ul>
+                            <li>06월 15일 ~ 06월 16일</li>
+                        </ul>
                     </section>
-                        </div>
-    </div>
-</div>
-<div class="layer pop_full pop_useinfo" data-room-detail="31632">
-    <div class="fix_title">객실 이용 안내<button onclick="close_layer();">닫기</button></div>
-    <div class="iscroll_cp scroll_31632">
-        <div class="scroller">
-                                <section>
+                </div>
+            </div>
+        </div>
+        <div class="layer pop_full pop_useinfo" data-room-detail="31632">
+            <div class="fix_title">객실 이용 안내<button onclick="close_layer();">닫기</button></div>
+            <div class="iscroll_cp scroll_31632">
+                <div class="scroller">
+                    <section>
                         <strong>기본정보</strong>
                         <ul class="dot_txt">
-                                                            <li>3인 기준 최대 3인 </li>
-                                                            <li>더블배드 1개, 싱글배드 1개</li>
-                                                    </ul>
+                            <li>3인 기준 최대 3인 </li>
+                            <li>더블배드 1개, 싱글배드 1개</li>
+                        </ul>
                     </section>
-                                    <section>
+                    <section>
                         <strong>선택 날짜</strong>
                         <ul class="dot_txt">
-                                                            <li>06월 15일 ~ 06월 16일</li>
-                                                    </ul>
+                            <li>06월 15일 ~ 06월 16일</li>
+                        </ul>
                     </section>
-                        </div>
-    </div>
-</div>
-<div class="layer pop_full pop_useinfo" data-room-detail="31633">
-    <div class="fix_title">객실 이용 안내<button onclick="close_layer();">닫기</button></div>
-    <div class="iscroll_cp scroll_31633">
-        <div class="scroller">
-                                <section>
+                </div>
+            </div>
+        </div>
+        <div class="layer pop_full pop_useinfo" data-room-detail="31633">
+            <div class="fix_title">객실 이용 안내<button onclick="close_layer();">닫기</button></div>
+            <div class="iscroll_cp scroll_31633">
+                <div class="scroller">
+                    <section>
                         <strong>기본정보</strong>
                         <ul class="dot_txt">
-                                                            <li>2인 기준 최대 2인 </li>
-                                                            <li>더블배드 1개</li>
-                                                    </ul>
+                            <li>2인 기준 최대 2인 </li>
+                            <li>더블배드 1개</li>
+                        </ul>
                     </section>
-                                    <section>
+                    <section>
                         <strong>선택 날짜</strong>
                         <ul class="dot_txt">
-                                                            <li>06월 15일 ~ 06월 16일</li>
-                                                    </ul>
+                            <li>06월 15일 ~ 06월 16일</li>
+                        </ul>
                     </section>
-                        </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Footer -->
+        <footer>
+            <% include ../viewmodules/footer.ejs %>
+        </footer>
+
     </div>
-</div>
 
+    <!-- 상단으로 -->
+    <button class="btn_go_top" onclick="moveTop();">상단으로</button>
 
+    <!-- //Wrap -->
 
-    <!-- Footer -->
-    <footer>
-        <% include ../viewmodules/footer.ejs %>
-    </footer>
+    <!-- Script -->
+    <!-- Library -->
+    <script type="text/javascript" src="/js/library/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/js/library/jquery.lazyload.js?rand=1591859320"></script>
+    <script type="text/javascript" src="/js/library/iscroll.js"></script>
 
-</div>
+    <!-- Service -->
+    <script type="text/javascript" src="/js/service/common.js?rand=1591859320"></script>
+    <script type="text/javascript" src="/js/service/geolocation.js?rand=1591859320"></script>
 
-<!-- 상단으로 -->
-<button class="btn_go_top" onclick="moveTop();">상단으로</button>
+    <!-- Module -->
+    <script type="text/javascript" src="/js/modules/dialogPopup.js?rand=1591859320"></script>
 
-<!-- //Wrap -->
-
-<!-- Script -->
-<!-- Library -->
-<script type="text/javascript" src="/js/library/jquery.cookie.js"></script>
-<script type="text/javascript" src="/js/library/jquery.lazyload.js?rand=1591859320"></script>
-<script type="text/javascript" src="/js/library/iscroll.js"></script>
-
-<!-- Service -->
-<script type="text/javascript" src="/js/service/common.js?rand=1591859320"></script>
-<script type="text/javascript" src="/js/service/geolocation.js?rand=1591859320"></script>
-
-<!-- Module -->
-<script type="text/javascript" src="/js/modules/dialogPopup.js?rand=1591859320"></script>
-
-<!-- Page Script -->
-<script type="text/javascript" src="/js/library/jquery-ui.min.js" ></script>
-<script type="text/javascript" src="/js/library/jquery.ui.touch-punch.min.js" ></script>
-<script type="text/javascript" src="/js/library/jquery.comiseo.daterangepicker.min.js" ></script>
-<script type="text/javascript" src="/js/library/swiper.min.js" ></script>
-<script type="text/javascript" src="/js/library/owl.carousel.min.js" ></script>
-<script type="text/javascript" src="/js/library/moment.js" ></script>
-<script type="text/javascript" src="https://www.goodchoice.kr/js/service/datepick.js?rand=1591859320" ></script>
-<script type="text/javascript" src="/js/library/vue.min.js" ></script>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1eff36c782b04e85889f4698bef8673f" ></script>
-<script type="text/javascript" src="https://www.goodchoice.kr/js/service/product.detail.js?rand=1591859320" ></script>
-
-<!-- Body Spinner -->
-<div class="spinner show"><span></span></div>
-
-<div style="display:none;">
-	<!-- 네이버 프리미엄 로그 분석(https://yeogirnd.atlassian.net/browse/SD-320)-->
-	<script type="text/javascript" src="https://wcs.naver.net/wcslog.js"></script>
-
-	<script>
-        //스토어 랜딩 분기
-        function goAppStore(dialogCheck){
-
-            var url = location.protocol + '//m.goodchoice.kr/main/adKeywordLanding/';
-            var kcode = getCookie('k_code');
-
-            if(kcode && kcode.indexOf("^") > -1) {
-                if(kcode.indexOf("du_") === 0) {
-                    // 'du_' 다음 유입
-                    dialogCheck ? url += 'oK0nFLMJQJ2l' : url += 'oK0nFLMJQJ2j';
-                } else if(kcode.indexOf("ns_") === 0) {
-                    // 'ns_' 네이버 지식쇼핑 유입
-                    dialogCheck ? url += 'ogMnDvZlsM2j' : url += 'ogynogydDJ2j';
-                } else {
-                    // 그 외
-                    url += 'ogMnDvZlsM2j';
-                }
-            } else {
-                // 그 외
-                dialogCheck ? url += 'ogMnDvZlsM2b' : url += 'ogMnDvZlsM2j';
-            }
-            location.href = url;
-        }
-		// 쿠키 생성
-		function setCookie(cName, cValue, cDay){
-			var expire = new Date();
-			expire.setDate(expire.getDate() + cDay);
-			cookies = cName + '=' + escape(cValue) + '; path=/ ';
-			if(typeof cDay != 'undefined') cookies += ';expires=' + expire.toGMTString() + ';';
-			document.cookie = cookies;
-		}
-
-		// 쿠키 가져오기
-		function getCookie(cName) {
-			cName = cName + '=';
-			var cookieData = document.cookie;
-			var start = cookieData.indexOf(cName);
-			var cValue = '';
-			if(start != -1){
-				start += cName.length;
-				var end = cookieData.indexOf(';', start);
-				if(end == -1)end = cookieData.length;
-				cValue = cookieData.substring(start, end);
-			}
-			return unescape(cValue);
-		}
-		if (getCookie('marketing_type') != '') {
-			if (getCookie('marketing_type') == 'pay') {
-				var _nasa={};
-				_nasa["cnv"] = wcs.cnv("1",getCookie('marketing_price')); // 전환유형, 전환가치 설정해야함. 설치매뉴얼 참고
-			} else {
-				var _nasa={};
-				_nasa["cnv"] = wcs.cnv("2","1"); // 전환유형, 전환가치 설정해야함. 설치매뉴얼 참고
-			}
-
-			//쿠키 삭제
-			setCookie('marketing_price', '', -1);
-			setCookie('marketing_type', '', -1);
-		}
-	</script>
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-77719807-2', 'auto');
-        ga('send', 'pageview');
+    <!-- Page Script -->
+    <script type="text/javascript" src="/js/library/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/library/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="/js/library/jquery.comiseo.daterangepicker.min.js"></script>
+    <script type="text/javascript" src="/js/library/swiper.min.js"></script>
+    <script type="text/javascript" src="/js/library/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="/js/library/moment.js"></script>
+    <script type="text/javascript" src="https://www.goodchoice.kr/js/service/datepick.js?rand=1591859320"></script>
+    <script type="text/javascript" src="/js/library/vue.min.js"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1eff36c782b04e85889f4698bef8673f">
+    </script>
+    <script type="text/javascript" src="https://www.goodchoice.kr/js/service/product.detail.js?rand=1591859320">
     </script>
 
-    <!-- Daum  중요 용도가 아니라면 주석처리 여부 결정 문제 없을시 삭제
+    <!-- Body Spinner -->
+    <div class="spinner show"><span></span></div>
+
+    <div style="display:none;">
+        <!-- 네이버 프리미엄 로그 분석(https://yeogirnd.atlassian.net/browse/SD-320)-->
+        <script type="text/javascript" src="https://wcs.naver.net/wcslog.js"></script>
+
+        <script>
+            //스토어 랜딩 분기
+            function goAppStore(dialogCheck) {
+
+                var url = location.protocol + '//m.goodchoice.kr/main/adKeywordLanding/';
+                var kcode = getCookie('k_code');
+
+                if (kcode && kcode.indexOf("^") > -1) {
+                    if (kcode.indexOf("du_") === 0) {
+                        // 'du_' 다음 유입
+                        dialogCheck ? url += 'oK0nFLMJQJ2l' : url += 'oK0nFLMJQJ2j';
+                    } else if (kcode.indexOf("ns_") === 0) {
+                        // 'ns_' 네이버 지식쇼핑 유입
+                        dialogCheck ? url += 'ogMnDvZlsM2j' : url += 'ogynogydDJ2j';
+                    } else {
+                        // 그 외
+                        url += 'ogMnDvZlsM2j';
+                    }
+                } else {
+                    // 그 외
+                    dialogCheck ? url += 'ogMnDvZlsM2b' : url += 'ogMnDvZlsM2j';
+                }
+                location.href = url;
+            }
+            // 쿠키 생성
+            function setCookie(cName, cValue, cDay) {
+                var expire = new Date();
+                expire.setDate(expire.getDate() + cDay);
+                cookies = cName + '=' + escape(cValue) + '; path=/ ';
+                if (typeof cDay != 'undefined') cookies += ';expires=' + expire.toGMTString() + ';';
+                document.cookie = cookies;
+            }
+
+            // 쿠키 가져오기
+            function getCookie(cName) {
+                cName = cName + '=';
+                var cookieData = document.cookie;
+                var start = cookieData.indexOf(cName);
+                var cValue = '';
+                if (start != -1) {
+                    start += cName.length;
+                    var end = cookieData.indexOf(';', start);
+                    if (end == -1) end = cookieData.length;
+                    cValue = cookieData.substring(start, end);
+                }
+                return unescape(cValue);
+            }
+            if (getCookie('marketing_type') != '') {
+                if (getCookie('marketing_type') == 'pay') {
+                    var _nasa = {};
+                    _nasa["cnv"] = wcs.cnv("1", getCookie('marketing_price')); // 전환유형, 전환가치 설정해야함. 설치매뉴얼 참고
+                } else {
+                    var _nasa = {};
+                    _nasa["cnv"] = wcs.cnv("2", "1"); // 전환유형, 전환가치 설정해야함. 설치매뉴얼 참고
+                }
+
+                //쿠키 삭제
+                setCookie('marketing_price', '', -1);
+                setCookie('marketing_type', '', -1);
+            }
+        </script>
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-77719807-2', 'auto');
+            ga('send', 'pageview');
+        </script>
+
+        <!-- Daum  중요 용도가 아니라면 주석처리 여부 결정 문제 없을시 삭제
     <script type="text/javascript">
         var roosevelt_params = {
             retargeting_id:'iaYgM3OBV.Uv.QOMJv.bqg00',
@@ -1089,62 +1319,67 @@
     </script>
     <script type="text/javascript" src="//adimg.daumcdn.net/rt/roosevelt.js" async></script -->
 
-    <!-- Google Code for &#50668;&#44592;&#50612;&#46412;_&#50937; Conversion Page -->
-    <script type="text/javascript">
-        /* <![CDATA[ */
-        var google_conversion_id = 964418007;
-        var google_conversion_language = "en";
-        var google_conversion_format = "3";
-        var google_conversion_color = "ffffff";
-        var google_conversion_label = "6YMHCM_i81wQ17PvywM";
-        var google_remarketing_only = false;
-        /* ]]> */
-    </script>
-    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+        <!-- Google Code for &#50668;&#44592;&#50612;&#46412;_&#50937; Conversion Page -->
+        <script type="text/javascript">
+            /* <![CDATA[ */
+            var google_conversion_id = 964418007;
+            var google_conversion_language = "en";
+            var google_conversion_format = "3";
+            var google_conversion_color = "ffffff";
+            var google_conversion_label = "6YMHCM_i81wQ17PvywM";
+            var google_remarketing_only = false;
+            /* ]]> */
+        </script>
+        <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
 
-    <noscript>
-        <div style="display:inline;">
-            <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/964418007/?label=6YMHCM_i81wQ17PvywM&amp;guid=ON&amp;script=0"/>
-        </div>
-    </noscript>
+        <noscript>
+            <div style="display:inline;">
+                <img height="1" width="1" style="border-style:none;" alt=""
+                    src="//www.googleadservices.com/pagead/conversion/964418007/?label=6YMHCM_i81wQ17PvywM&amp;guid=ON&amp;script=0" />
+            </div>
+        </noscript>
 
-	<script type="text/javascript">
-		if (!wcs_add) var wcs_add={};
-		wcs_add["wa"] = "s_4540c185467c";
-		if (!_nasa) var _nasa={};
-		wcs.inflow("goodchoice.kr");
-		wcs_do(_nasa);
-	</script>
+        <script type="text/javascript">
+            if (!wcs_add) var wcs_add = {};
+            wcs_add["wa"] = "s_4540c185467c";
+            if (!_nasa) var _nasa = {};
+            wcs.inflow("goodchoice.kr");
+            wcs_do(_nasa);
+        </script>
 
-	<!-- Global site tag (gtag.js) - Google AdWords: 802163829 -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=AW-802163829"></script>
-	<script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+        <!-- Global site tag (gtag.js) - Google AdWords: 802163829 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-802163829"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
 
-        gtag('config', 'AW-802163829');
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
 
-        // Event snippet for WEB_다운로드_버튼 conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button.
-        
-        $(function(){
-            $('.appdown_link').on('click',function(){
-                gtag('event', 'conversion', {
-                    'send_to': 'AW-802163829/jxc6CN22x4MBEPWYwP4C'
+            gtag('config', 'AW-802163829');
+
+            // Event snippet for WEB_다운로드_버튼 conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button.
+
+            $(function () {
+                $('.appdown_link').on('click', function () {
+                    gtag('event', 'conversion', {
+                        'send_to': 'AW-802163829/jxc6CN22x4MBEPWYwP4C'
+                    });
                 });
             });
-        });
-	</script>
+        </script>
 
-    <!-- 채널제출 -->
-    <span itemscope="" itemtype="http://schema.org/Organization">
-        <link itemprop="url" href="https://www.goodchoice.kr">
-        <a itemprop="sameAs" href="https://www.facebook.com/goodchoiceofficial"></a>
-        <a itemprop="sameAs" href="https://play.google.com/store/apps/details?id=kr.goodchoice.abouthere"></a>
-        <a itemprop="sameAs" href="https://itunes.apple.com/kr/app/id884043462"></a>
-        <a itemprop="sameAs" href="https://post.naver.com/withinnovation"></a>
-        <a itemprop="sameAs" href="https://www.youtube.com/channel/UCLI1HOVJdhWdVl9pT__g2Zw"></a>
-    </span>
-</div>
+        <!-- 채널제출 -->
+        <span itemscope="" itemtype="http://schema.org/Organization">
+            <link itemprop="url" href="https://www.goodchoice.kr">
+            <a itemprop="sameAs" href="https://www.facebook.com/goodchoiceofficial"></a>
+            <a itemprop="sameAs" href="https://play.google.com/store/apps/details?id=kr.goodchoice.abouthere"></a>
+            <a itemprop="sameAs" href="https://itunes.apple.com/kr/app/id884043462"></a>
+            <a itemprop="sameAs" href="https://post.naver.com/withinnovation"></a>
+            <a itemprop="sameAs" href="https://www.youtube.com/channel/UCLI1HOVJdhWdVl9pT__g2Zw"></a>
+        </span>
+    </div>
 </body>
+
 </html>

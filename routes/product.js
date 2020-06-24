@@ -5,20 +5,20 @@ const models = require('../models');
 router.get('/search/:id', async function (req, res, next) {
   let session = req.session;
   let divisionID = req.params.id;
-  let result = await models.accommodations.findAll();
+  let result = await models.Accommodations.findAll();
 
   try {
     if (result) {
-      for (let accommodation of result) {
-        let result2 = await models.address.findOne({
-          where: {
-            id: accommodation.addressId
-          }
-        });
-        if (result2) {
-          accommodation.addressName = result2.addressName;
-        }
-      }
+      // for (let accommodation of result) {
+      //   let result2 = await models.address.findOne({
+      //     where: {
+      //       id: accommodation.addressId
+      //     }
+      //   });
+      //   if (result2) {
+      //     accommodation.addressName = result2.addressName;
+      //   }
+      // }
     }
   } catch (e) {
     console.log(e);
@@ -63,5 +63,13 @@ router.get('/detail', function (req, res, next) {
   });
 });
 
+router.get('/detail', function (req, res, next) {
+  let session = req.session;
+
+  res.render('product/detail', {
+    title: '호텔명 - 모두의 호텔리어',
+    session: session
+  });
+});
 
 module.exports = router;
