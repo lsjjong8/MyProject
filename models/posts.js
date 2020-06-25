@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Boards = sequelize.define('Boards', {
+  const Posts = sequelize.define('Posts', {
     division: {
       type: DataTypes.INTEGER,
       allowNull: false
@@ -28,8 +28,8 @@ module.exports = (sequelize, DataTypes) => {
     // timestamps: false,
   }
   );
-  Boards.associate = function (models) {
+  Posts.associate = function (models) {
     // associations can be defined here
   };
-  return Boards;
+  return Posts;
 };
