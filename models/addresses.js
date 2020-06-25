@@ -33,18 +33,34 @@ module.exports = (sequelize, DataTypes) => {
     latitude: {
       type: DataTypes.DECIMAL(18, 9),
       allowNull: false,
+      validate: {
+        min: -90,
+        max: 90
+      }
     },
     altitude: {
       type: DataTypes.DECIMAL(18, 9),
       allowNull: false,
+      validate: {
+        min: -180,
+        max: 180
+      }
+    },
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
     }
-  }, 
-  {
+  }, {
     // timestamps: false,
-  }
-  );
-  Addresses.associate = function(models) {
-    // associations can be defined here
+  });
+  Addresses.associate = function (models) {
+    // Addresses.hasMany(models.Accommodations);
   };
   return Addresses;
 };

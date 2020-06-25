@@ -16,33 +16,31 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      accommodationId: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
-      roomId: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
-      memberId: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
-      roomsServiceId: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
-      paymentId: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
+      // roomId: {
+      //   type: Sequelize.STRING,
+      //   allowNull: false
+      // },
+      // memberId: {
+      //   type: Sequelize.STRING,
+      //   allowNull: false
+      // },
+      // roomsServiceId: {
+      //   type: Sequelize.STRING,
+      //   allowNull: false
+      // },
+      // paymentId: {
+      //   type: Sequelize.STRING,
+      //   allowNull: false
+      // },
       createdAt: {
+        type: Sequelize.DATE,
         allowNull: false,
-        type: Sequelize.DATE
+        defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
       },
       updatedAt: {
+        type: Sequelize.DATE,
         allowNull: false,
-        type: Sequelize.DATE
+        defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
       }
     });
   },

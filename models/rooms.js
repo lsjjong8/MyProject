@@ -9,8 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     accommodationId: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true
+      allowNull: false
     },
     roomStyle: {
       type: DataTypes.STRING,
@@ -27,6 +26,16 @@ module.exports = (sequelize, DataTypes) => {
     weekendPrice: {
       type: DataTypes.DECIMAL(18, 0),
       allowNull: false
+    },
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
     }
   }, 
   {
@@ -34,7 +43,11 @@ module.exports = (sequelize, DataTypes) => {
   }
   );
   Rooms.associate = function(models) {
-    // associations can be defined here
+    Rooms.belongsTo(models.Accommodations, {
+      foreignKey: "accommodationId"
+    });
+
+    Rooms.hasMany(models.Reservations);
   };
   return Rooms;
 };

@@ -8,6 +8,16 @@ module.exports = (sequelize, DataTypes) => {
     contents: {
       type: DataTypes.TEXT,
       allowNull: false
+    },
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
     }
   }, 
   {
@@ -15,7 +25,9 @@ module.exports = (sequelize, DataTypes) => {
   }
   );
   Reviews.associate = function(models) {
-    // associations can be defined here
+    Reviews.belongsTo(models.Reservations, {
+      foreignKey: "reservationId"
+    });
   };
   return Reviews;
 };

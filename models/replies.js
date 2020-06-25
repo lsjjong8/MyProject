@@ -5,13 +5,19 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    accommodationId: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
     contents: {
       type: DataTypes.TEXT,
       allowNull: false
+    },
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
     }
   }, 
   {
@@ -19,7 +25,9 @@ module.exports = (sequelize, DataTypes) => {
   }
   );
   Replies.associate = function(models) {
-    // associations can be defined here
+    Replies.belongsTo(models.Reviews, {
+      foreignKey: "reviewId"
+    });
   };
   return Replies;
 };

@@ -1,7 +1,7 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Accommodations = sequelize.define('Accommodations', {
-    division: {
+    kinds: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
@@ -13,13 +13,23 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-    addressCode: {
+    phoneNumber: {
+      type: DataTypes.STRING,
+      // allowNull: false
+    },
+    addressId: {
       type: DataTypes.BIGINT,
       allowNull: false
     },
-    phoneNumber: {
-      type: DataTypes.STRING,
-      allowNull: false
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
     }
   }, 
   {
@@ -27,7 +37,11 @@ module.exports = (sequelize, DataTypes) => {
   }
   );
   Accommodations.associate = function(models) {
-    // associations can be defined here
+    Accommodations.belongsTo(models.Addresses, {
+      foreignKey: "addressId"
+    });
+    
+    Accommodations.hasMany(models.Reservations);
   };
   return Accommodations;
 };

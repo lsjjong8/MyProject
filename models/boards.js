@@ -5,10 +5,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    memberId: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
     title: {
       type: DataTypes.STRING,
       allowNull: false
@@ -16,6 +12,16 @@ module.exports = (sequelize, DataTypes) => {
     contents: {
       type: DataTypes.TEXT,
       allowNull: false
+    },
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
     }
   }, 
   {

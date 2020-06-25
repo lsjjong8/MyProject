@@ -8,7 +8,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      division: {
+      kinds: {
         type: Sequelize.INTEGER,
         allowNull: false
       },
@@ -20,21 +20,23 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      addressCode: {
+      phoneNumber: {
+        type: Sequelize.STRING,
+        // allowNull: false
+      },
+      addressId: {
         type: Sequelize.BIGINT,
         allowNull: false
       },
-      phoneNumber: {
-        type: Sequelize.STRING,
-        allowNull: false
-      },
       createdAt: {
+        type: Sequelize.DATE,
         allowNull: false,
-        type: Sequelize.DATE
+        defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
       },
       updatedAt: {
+        type: Sequelize.DATE,
         allowNull: false,
-        type: Sequelize.DATE
+        defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
       }
     });
   },

@@ -12,10 +12,6 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false
       },
-      memberId: {
-        type: Sequelize.INTEGER,
-        allowNull: false
-      },
       title: {
         type: Sequelize.STRING,
         allowNull: false
@@ -25,12 +21,14 @@ module.exports = {
         allowNull: false
       },
       createdAt: {
+        type: Sequelize.DATE,
         allowNull: false,
-        type: Sequelize.DATE
+        defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
       },
       updatedAt: {
+        type: Sequelize.DATE,
         allowNull: false,
-        type: Sequelize.DATE
+        defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
       }
     });
   },

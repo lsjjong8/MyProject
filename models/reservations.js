@@ -1,4 +1,7 @@
 'use strict';
+
+const accommodations = require("./accommodations");
+
 module.exports = (sequelize, DataTypes) => {
   const Reservations = sequelize.define('Reservations', {
     chechIn: {
@@ -9,25 +12,31 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-    accommodationId: {
-      type: DataTypes.STRING,
-      allowNull: false
+    // roomId: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false
+    // },
+    // memberId: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false
+    // },
+    // roomsServiceId: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false
+    // },
+    // paymentId: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false
+    // },
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
     },
-    roomId: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    memberId: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    roomsServiceId: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    paymentId: {
-      type: DataTypes.STRING,
-      allowNull: false
+    updatedAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
     }
   }, 
   {
@@ -35,7 +44,22 @@ module.exports = (sequelize, DataTypes) => {
   }
   );
   Reservations.associate = function(models) {
-    // associations can be defined here
+    // Reservations.belongsTo(models.Accommodations, {
+    //   foreignKey: "accommodationId"
+    // });
+    // Reservations.belongsTo(models.Rooms, {
+    //   foreignKey: "roomId"
+    // });
+    // Reservations.belongsTo(models.Members, {
+    //   foreignKey: "memberId"
+    // });
+    // Reservations.belongsTo(models.RoomServices, {
+    //   foreignKey: "roomServicesId"
+    // });
+    // Reservations.belongsTo(models.Payment, {
+    //   foreignKey: "paymentId"
+    // });
+    
   };
   return Reservations;
 };

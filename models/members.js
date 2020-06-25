@@ -1,6 +1,11 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Members = sequelize.define('Members', {
+    id: {
+      allowNull: false,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
     email: {
       type: DataTypes.STRING,
       allowNull: false
@@ -12,6 +17,16 @@ module.exports = (sequelize, DataTypes) => {
     password: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
     }
   }, 
   {
@@ -19,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   );
   Members.associate = function(models) {
-    // associations can be defined here
+    Members.hasMany(models.Reservations);
   };
   return Members;
 };

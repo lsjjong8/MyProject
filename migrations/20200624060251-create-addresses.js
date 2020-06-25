@@ -34,10 +34,28 @@ module.exports = {
       latitude: {
         type: Sequelize.DECIMAL(18, 9),
         allowNull: false,
+        validate: {
+          min: -90,
+          max: 90
+        }
       },
       altitude: {
         type: Sequelize.DECIMAL(18, 9),
         allowNull: false,
+        validate: {
+          min: -180,
+          max: 180
+        }
+      },
+      createdAt: {
+        type: Sequelize.DATE,
+        allowNull: false,
+        defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
+      },
+      updatedAt: {
+        type: Sequelize.DATE,
+        allowNull: false,
+        defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
       }
     });
   },

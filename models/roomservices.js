@@ -9,6 +9,16 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
+    },
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
     }
   },
   {
@@ -16,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   );
   RoomServices.associate = function(models) {
-    // associations can be defined here
+    RoomServices.hasMany(models.Reservations);
   };
   return RoomServices;
 };
